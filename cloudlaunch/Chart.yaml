@@ -1,0 +1,5 @@
+name: cloudlaunch
+version: 0.1.0
+description: A Helm chart for CloudLaunch
+home: http://cloudlaunch.cloudve.org/
+appVersion: 2.0.2
