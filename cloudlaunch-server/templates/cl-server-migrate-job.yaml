@@ -1,0 +1,41 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ template "cloudlaunch.fullname" . }}-server-db-migrate-job
+  labels:
+    app: {{ template "cloudlaunch.name" . }}
+    chart: {{ template "cloudlaunch.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+  annotations:
+    # This is what defines this resource as a hook. Without this line, the
+    # job is considered part of the release.
+    "helm.sh/hook": post-install,post-upgrade,post-rollback
+    "helm.sh/hook-weight": "10"
+    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  template:
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ['python', 'django-cloudlaunch/manage.py', 'migrate']
+          env:
+            - name: CELERY_BROKER_URL
+              value: amqp://{{ .Values.rabbitmq.rabbitmqUsername }}:{{ .Values.rabbitmq.rabbitmqPassword }}@{{ template "rabbitmq.fullname" . }}:5672/
+            - name: DJANGO_SETTINGS_MODULE
+              value: cloudlaunchserver.settings_prod
+            - name: CLOUDLAUNCH_DB_ENGINE
+              value: postgresql_psycopg2
+            - name: CLOUDLAUNCH_DB_NAME
+              value: {{ default "cloudlaunch" .Values.postgresql.postgresDatabase | quote }}
+            - name: CLOUDLAUNCH_DB_USER
+              value: {{ default "cloudlaunch" .Values.postgresql.postgresUser | quote }}
+            - name: CLOUDLAUNCH_DB_HOST
+              value: {{ template "postgresql.fullname" . }}
+            - name: CLOUDLAUNCH_DB_PORT
+              value: {{ default 5432 .Values.postgresql.service.port | quote }}
+            - name: CLOUDLAUNCH_DB_PASSWORD
+              value: {{ .Values.postgresql.postgresPassword | quote }}
+      restartPolicy: Never
