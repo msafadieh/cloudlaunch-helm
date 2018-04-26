@@ -46,3 +46,22 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{- define "rabbitmq.fullname" -}}
 {{- printf "%s-%s" .Release.Name "rabbitmq" | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
+
+{{- define "cloudlaunch.envvars" }}
+            - name: CELERY_BROKER_URL
+              value: amqp://{{ .Values.rabbitmq.rabbitmqUsername }}:{{ .Values.rabbitmq.rabbitmqPassword }}@{{ template "rabbitmq.fullname" . }}:5672/
+            - name: DJANGO_SETTINGS_MODULE
+              value: cloudlaunchserver.settings_prod
+            - name: CLOUDLAUNCH_DB_ENGINE
+              value: postgresql_psycopg2
+            - name: CLOUDLAUNCH_DB_NAME
+              value: {{ default "cloudlaunch" .Values.postgresql.postgresDatabase | quote }}
+            - name: CLOUDLAUNCH_DB_USER
+              value: {{ default "cloudlaunch" .Values.postgresql.postgresUser | quote }}
+            - name: CLOUDLAUNCH_DB_HOST
+              value: {{ template "postgresql.fullname" . }}
+            - name: CLOUDLAUNCH_DB_PORT
+              value: {{ default 5432 .Values.postgresql.service.port | quote }}
+            - name: CLOUDLAUNCH_DB_PASSWORD
+              value: {{ .Values.postgresql.postgresPassword | quote }}
+{{- end }}
