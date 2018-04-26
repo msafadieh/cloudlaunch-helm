@@ -5,7 +5,7 @@ replicaCount: 1
 image:
   repository: cloudve/cloudlaunch-server
   tag: latest
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   
 service:
   type: NodePort
@@ -43,10 +43,11 @@ tolerations: []
 affinity: {}
 
 rabbitmq:
-    username: guest
-    password: guest
+    rabbitmqUsername: notAGuest
+    rabbitmqPassword: aRandomPassword
+    rabbitmqErlangCookie: mustRemainSameBetweenUpgrades
 
-postgres:
+postgresql:
     enabled: true
     postgresDatabase: cloudlaunch
     postgresUser: cloudlaunch
