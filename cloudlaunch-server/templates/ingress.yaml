@@ -1,5 +1,5 @@
 {{- if .Values.ingress.enabled -}}
-{{- $fullName := include "cloudlaunch.fullname" . -}}
+{{- $fullName := include "cloudlaunch-server.fullname" . -}}
 {{- $servicePort := .Values.service.port -}}
 {{- $ingressPath := .Values.ingress.path -}}
 apiVersion: extensions/v1beta1
@@ -7,8 +7,8 @@ kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    app: {{ template "cloudlaunch.name" . }}
-    chart: {{ template "cloudlaunch.chart" . }}
+    app: {{ template "cloudlaunch-server.name" . }}
+    chart: {{ template "cloudlaunch-server.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 {{- with .Values.ingress.annotations }}

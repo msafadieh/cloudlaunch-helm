@@ -2,22 +2,22 @@
 apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
-  name: {{ template "cloudlaunch.fullname" . }}-server
+  name: {{ template "cloudlaunch-server.fullname" . }}-server
   labels:
-    app: {{ template "cloudlaunch.name" . }}
-    chart: {{ template "cloudlaunch.chart" . }}
+    app: {{ template "cloudlaunch-server.name" . }}
+    chart: {{ template "cloudlaunch-server.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ template "cloudlaunch.name" . }}
+      app: {{ template "cloudlaunch-server.name" . }}
       release: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app: {{ template "cloudlaunch.name" . }}
+        app: {{ template "cloudlaunch-server.name" . }}
         release: {{ .Release.Name }}
     spec:
       containers:
@@ -35,7 +35,7 @@ spec:
             tcpSocket:
               port: http
           env:
-          {{- include "cloudlaunch.envvars" . }}
+          {{- include "cloudlaunch-server.envvars" . }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}
