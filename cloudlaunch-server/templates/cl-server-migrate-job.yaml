@@ -22,5 +22,5 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: ['python', 'django-cloudlaunch/manage.py', 'migrate']
           env:
-          {{- include "cloudlaunch.envvars" . }}
+          {{- include "cloudlaunch-server.envvars" . }}
       restartPolicy: Never
