@@ -2,7 +2,7 @@
 apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
-  name: {{ template "cloudlaunch-server.fullname" . }}-server
+  name: {{ template "cloudlaunch-server.fullname" . }}
   labels:
     app: {{ template "cloudlaunch-server.name" . }}
     chart: {{ template "cloudlaunch-server.chart" . }}
