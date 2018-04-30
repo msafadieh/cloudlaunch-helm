@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: {{ template "cloudlaunch-server.fullname" . }}-server-db-migrate-job
+  name: {{ template "cloudlaunch-server.fullname" . }}-db-migrate-job
   labels:
     app: {{ template "cloudlaunch-server.name" . }}
     chart: {{ template "cloudlaunch-server.chart" . }}
