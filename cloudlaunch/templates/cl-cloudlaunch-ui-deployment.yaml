@@ -20,6 +20,10 @@ spec:
         app: {{ template "cloudlaunch.name" . }}
         release: {{ .Release.Name }}
     spec:
+      volumes:
+        - name: nginx-config
+          configMap:
+            name: {{ template "cloudlaunch.fullname" . }}-nginx-conf
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -29,11 +33,15 @@ spec:
               containerPort: 80
               protocol: TCP
           livenessProbe:
-            httpGet:
+            tcpSocket:
               port: http
           readinessProbe:
-            httpGet:
+            tcpSocket:
               port: http
+          volumeMounts:
+            - name: nginx-config
+              mountPath: /etc/nginx/conf.d
+              readOnly: true
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}
