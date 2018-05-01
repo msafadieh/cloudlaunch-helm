@@ -1,0 +1,418 @@
+[
+{
+  "model": "djcloudbridge.cloud",
+  "pk": "amazon-ap-mumbai",
+  "fields": {
+    "added": "2017-11-15T09:00:21.485Z",
+    "updated": "2017-11-15T09:00:21.485Z",
+    "name": "Amazon AP - Mumbai",
+    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
+    "kind": "cloud"
+  }
+},
+{
+  "model": "djcloudbridge.cloud",
+  "pk": "amazon-ap-seoul",
+  "fields": {
+    "added": "2017-01-30T21:15:52.293Z",
+    "updated": "2017-11-15T08:54:47.420Z",
+    "name": "Amazon AP - Seoul",
+    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
+    "kind": "cloud"
+  }
+},
+{
+  "model": "djcloudbridge.cloud",
+  "pk": "amazon-ap-singapore",
+  "fields": {
+    "added": "2017-11-15T09:01:31.206Z",
+    "updated": "2017-11-15T09:01:31.206Z",
+    "name": "Amazon AP - Singapore",
+    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
+    "kind": "cloud"
+  }
+},
+{
+  "model": "djcloudbridge.cloud",
+  "pk": "amazon-ap-sydney",
+  "fields": {
+    "added": "2016-06-26T03:13:18.315Z",
+    "updated": "2017-11-15T09:26:03.344Z",
+    "name": "Amazon AP - Sydney",
+    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
+    "kind": "cloud"
+  }
+},
+{
+  "model": "djcloudbridge.cloud",
+  "pk": "amazon-ap-tokyo",
+  "fields": {
+    "added": "2017-11-15T09:02:36.950Z",
+    "updated": "2017-11-15T09:02:36.950Z",
+    "name": "Amazon AP - Tokyo",
+    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
+    "kind": "cloud"
+  }
+},
+{
+  "model": "djcloudbridge.cloud",
+  "pk": "amazon-ca-canada",
+  "fields": {
+    "added": "2017-11-15T09:04:45.056Z",
+    "updated": "2017-11-15T09:04:45.056Z",
+    "name": "Amazon CA - Canada",
+    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
+    "kind": "cloud"
+  }
+},
+{
+  "model": "djcloudbridge.cloud",
+  "pk": "amazon-eu-frankfurt",
+  "fields": {
+    "added": "2016-06-26T03:11:01.179Z",
+    "updated": "2017-11-15T08:59:02.073Z",
+    "name": "Amazon EU - Frankfurt",
+    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
+    "kind": "cloud"
+  }
+},
+{
+  "model": "djcloudbridge.cloud",
+  "pk": "amazon-eu-west-1-ireland",
+  "fields": {
+    "added": "2017-01-06T04:44:48.179Z",
+    "updated": "2017-11-15T08:53:49.847Z",
+    "name": "Amazon EU West 1 - Ireland",
+    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
+    "kind": "cloud"
+  }
+},
+{
+  "model": "djcloudbridge.cloud",
+  "pk": "amazon-eu-west-2-england",
+  "fields": {
+    "added": "2017-11-15T08:53:53.846Z",
+    "updated": "2017-11-15T08:53:53.846Z",
+    "name": "Amazon EU West 2 - England",
+    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
+    "kind": "cloud"
+  }
+},
+{
+  "model": "djcloudbridge.cloud",
+  "pk": "amazon-sa-sao-paulo",
+  "fields": {
+    "added": "2017-11-15T09:06:06.848Z",
+    "updated": "2017-11-15T09:06:06.848Z",
+    "name": "Amazon SA - S\u00e3o Paulo",
+    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
+    "kind": "cloud"
+  }
+},
+{
+  "model": "djcloudbridge.cloud",
+  "pk": "amazon-us-east-2-ohio",
+  "fields": {
+    "added": "2017-03-02T21:57:34.571Z",
+    "updated": "2017-11-15T08:56:54.259Z",
+    "name": "Amazon US East 2 - Ohio",
+    "access_instructions_url": "https://new.galaxyproject.org/cloudman/getting-started/#amazon-cloud",
+    "kind": "cloud"
+  }
+},
+{
+  "model": "djcloudbridge.cloud",
+  "pk": "amazon-us-east-n-virginia",
+  "fields": {
+    "added": "2016-06-26T03:08:59.048Z",
+    "updated": "2017-11-15T08:49:03.900Z",
+    "name": "Amazon US East 1 - N. Virginia",
+    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
+    "kind": "cloud"
+  }
+},
+{
+  "model": "djcloudbridge.cloud",
+  "pk": "amazon-us-west-2-oregon",
+  "fields": {
+    "added": "2017-11-15T08:50:57.719Z",
+    "updated": "2017-11-15T08:50:57.719Z",
+    "name": "Amazon US West 2 - Oregon",
+    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
+    "kind": "cloud"
+  }
+},
+{
+  "model": "djcloudbridge.cloud",
+  "pk": "amazon-us-west-n-california",
+  "fields": {
+    "added": "2017-11-15T08:48:32.833Z",
+    "updated": "2017-11-15T08:49:21.139Z",
+    "name": "Amazon US West 1 - N. California",
+    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
+    "kind": "cloud"
+  }
+},
+{
+  "model": "djcloudbridge.cloud",
+  "pk": "bwcloud",
+  "fields": {
+    "added": "2016-12-23T13:04:26.905Z",
+    "updated": "2017-09-08T12:13:00.656Z",
+    "name": "de.NBI Cloud",
+    "access_instructions_url": "",
+    "kind": "cloud"
+  }
+},
+{
+  "model": "djcloudbridge.cloud",
+  "pk": "chameleon",
+  "fields": {
+    "added": "2016-06-29T04:18:44.681Z",
+    "updated": "2016-06-29T04:18:44.681Z",
+    "name": "Chameleon",
+    "access_instructions_url": null,
+    "kind": "cloud"
+  }
+},
+{
+  "model": "djcloudbridge.cloud",
+  "pk": "jetstream",
+  "fields": {
+    "added": "2016-06-28T15:30:29.290Z",
+    "updated": "2017-11-15T18:54:41.055Z",
+    "name": "Jetstream",
+    "access_instructions_url": "https://galaxyproject.org/cloud/jetstream/allocation/#api-access",
+    "kind": "cloud"
+  }
+},
+{
+  "model": "djcloudbridge.cloud",
+  "pk": "nectar",
+  "fields": {
+    "added": "2016-06-26T02:53:50.475Z",
+    "updated": "2017-08-31T13:27:33.438Z",
+    "name": "NeCTAR",
+    "access_instructions_url": "http://vlsci.github.io/lscc_docs/tutorials/gvl_launch/gvl_launch/",
+    "kind": "cloud"
+  }
+},
+{
+  "model": "djcloudbridge.aws",
+  "pk": "amazon-ap-mumbai",
+  "fields": {
+    "region_name": "ap-south-1",
+    "ec2_endpoint_url": "https://ec2.ap-south-1.amazonaws.com",
+    "ec2_is_secure": true,
+    "ec2_validate_certs": true,
+    "s3_endpoint_url": "https://s3.ap-south-1.amazonaws.com",
+    "s3_is_secure": true,
+    "s3_validate_certs": true
+  }
+},
+{
+  "model": "djcloudbridge.aws",
+  "pk": "amazon-ap-seoul",
+  "fields": {
+    "region_name": "ap-northeast-2",
+    "ec2_endpoint_url": "https://ec2.ap-northeast-2.amazonaws.com",
+    "ec2_is_secure": true,
+    "ec2_validate_certs": true,
+    "s3_endpoint_url": "https://s3.ap-northeast-2.amazonaws.com",
+    "s3_is_secure": true,
+    "s3_validate_certs": true
+  }
+},
+{
+  "model": "djcloudbridge.aws",
+  "pk": "amazon-ap-singapore",
+  "fields": {
+    "region_name": "ap-southeast-1",
+    "ec2_endpoint_url": "https://ec2.ap-southeast-1.amazonaws.com",
+    "ec2_is_secure": true,
+    "ec2_validate_certs": true,
+    "s3_endpoint_url": "https://s3.ap-southeast-1.amazonaws.com",
+    "s3_is_secure": true,
+    "s3_validate_certs": true
+  }
+},
+{
+  "model": "djcloudbridge.aws",
+  "pk": "amazon-ap-sydney",
+  "fields": {
+    "region_name": "ap-southeast-2",
+    "ec2_endpoint_url": "https://ec2.ap-southeast-2.amazonaws.com",
+    "ec2_is_secure": true,
+    "ec2_validate_certs": true,
+    "s3_endpoint_url": "https://s3.ap-southeast-2.amazonaws.com",
+    "s3_is_secure": true,
+    "s3_validate_certs": true
+  }
+},
+{
+  "model": "djcloudbridge.aws",
+  "pk": "amazon-ap-tokyo",
+  "fields": {
+    "region_name": "ap-northeast-1",
+    "ec2_endpoint_url": "https://ec2.ap-northeast-1.amazonaws.com",
+    "ec2_is_secure": true,
+    "ec2_validate_certs": true,
+    "s3_endpoint_url": "https://s3.ap-northeast-1.amazonaws.com",
+    "s3_is_secure": true,
+    "s3_validate_certs": true
+  }
+},
+{
+  "model": "djcloudbridge.aws",
+  "pk": "amazon-ca-canada",
+  "fields": {
+    "region_name": "ca-central-1",
+    "ec2_endpoint_url": "https://ec2.ca-central-1.amazonaws.com",
+    "ec2_is_secure": true,
+    "ec2_validate_certs": true,
+    "s3_endpoint_url": "https://s3.ca-central-1.amazonaws.com",
+    "s3_is_secure": true,
+    "s3_validate_certs": true
+  }
+},
+{
+  "model": "djcloudbridge.aws",
+  "pk": "amazon-eu-frankfurt",
+  "fields": {
+    "region_name": "eu-central-1",
+    "ec2_endpoint_url": "https://ec2.eu-central-1.amazonaws.com",
+    "ec2_is_secure": true,
+    "ec2_validate_certs": true,
+    "s3_endpoint_url": "https://s3.eu-central-1.amazonaws.com",
+    "s3_is_secure": true,
+    "s3_validate_certs": true
+  }
+},
+{
+  "model": "djcloudbridge.aws",
+  "pk": "amazon-eu-west-1-ireland",
+  "fields": {
+    "region_name": "eu-west-1",
+    "ec2_endpoint_url": "https://ec2.eu-west-1.amazonaws.com",
+    "ec2_is_secure": true,
+    "ec2_validate_certs": true,
+    "s3_endpoint_url": "https://s3.eu-west-1.amazonaws.com",
+    "s3_is_secure": true,
+    "s3_validate_certs": true
+  }
+},
+{
+  "model": "djcloudbridge.aws",
+  "pk": "amazon-eu-west-2-england",
+  "fields": {
+    "region_name": "eu-west-2",
+    "ec2_endpoint_url": "https://ec2.eu-west-2.amazonaws.com",
+    "ec2_is_secure": true,
+    "ec2_validate_certs": true,
+    "s3_endpoint_url": "https://s3.eu-west-2.amazonaws.com",
+    "s3_is_secure": true,
+    "s3_validate_certs": true
+  }
+},
+{
+  "model": "djcloudbridge.aws",
+  "pk": "amazon-sa-sao-paulo",
+  "fields": {
+    "region_name": "sa-east-1",
+    "ec2_endpoint_url": "https://ec2.sa-east-1.amazonaws.com",
+    "ec2_is_secure": true,
+    "ec2_validate_certs": true,
+    "s3_endpoint_url": "https://s3.sa-east-1.amazonaws.com",
+    "s3_is_secure": true,
+    "s3_validate_certs": true
+  }
+},
+{
+  "model": "djcloudbridge.aws",
+  "pk": "amazon-us-east-n-virginia",
+  "fields": {
+    "region_name": "us-east-1",
+    "ec2_endpoint_url": "https://ec2.us-east-1.amazonaws.com",
+    "ec2_is_secure": true,
+    "ec2_validate_certs": true,
+    "s3_endpoint_url": "https://s3.amazonaws.com",
+    "s3_is_secure": true,
+    "s3_validate_certs": true
+  }
+},
+{
+  "model": "djcloudbridge.aws",
+  "pk": "amazon-us-east-2-ohio",
+  "fields": {
+    "region_name": "us-east-2",
+    "ec2_endpoint_url": "https://ec2.us-east-2.amazonaws.com",
+    "ec2_is_secure": true,
+    "ec2_validate_certs": true,
+    "s3_endpoint_url": "https://s3.us-east-2.amazonaws.com",
+    "s3_is_secure": true,
+    "s3_validate_certs": true
+  }
+},
+{
+  "model": "djcloudbridge.aws",
+  "pk": "amazon-us-west-n-california",
+  "fields": {
+    "region_name": "us-west-1",
+    "ec2_endpoint_url": "https://ec2.us-west-1.amazonaws.com",
+    "ec2_is_secure": true,
+    "ec2_validate_certs": true,
+    "s3_endpoint_url": "https://s3.us-west-1.amazonaws.com",
+    "s3_is_secure": true,
+    "s3_validate_certs": true
+  }
+},
+{
+  "model": "djcloudbridge.aws",
+  "pk": "amazon-us-west-2-oregon",
+  "fields": {
+    "region_name": "us-west-2",
+    "ec2_endpoint_url": "https://ec2.us-west-2.amazonaws.com",
+    "ec2_is_secure": true,
+    "ec2_validate_certs": true,
+    "s3_endpoint_url": "https://s3.us-west-2.amazonaws.com",
+    "s3_is_secure": true,
+    "s3_validate_certs": true
+  }
+},
+{
+  "model": "djcloudbridge.openstack",
+  "pk": "chameleon",
+  "fields": {
+    "auth_url": "https://openstack.tacc.chameleoncloud.org:5000/v2.0",
+    "region_name": "RegionOne",
+    "identity_api_version": null
+  }
+},
+{
+  "model": "djcloudbridge.openstack",
+  "pk": "bwcloud",
+  "fields": {
+    "auth_url": "https://bwcloud.ruf.uni-freiburg.de:5000/v2.0",
+    "region_name": "Freiburg",
+    "identity_api_version": "v2.0"
+  }
+},
+{
+  "model": "djcloudbridge.openstack",
+  "pk": "jetstream",
+  "fields": {
+    "auth_url": "https://jblb.jetstream-cloud.org:35357/v3",
+    "region_name": "RegionOne",
+    "identity_api_version": "v3.0"
+  }
+},
+{
+  "model": "djcloudbridge.openstack",
+  "pk": "nectar",
+  "fields": {
+    "auth_url": "https://keystone.rc.nectar.org.au:5000/v3/",
+    "region_name": "Melbourne",
+    "identity_api_version": "v3.0"
+  }
+}
+]

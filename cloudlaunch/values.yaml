@@ -52,3 +52,8 @@ postgresql:
     postgresDatabase: cloudlaunch
     postgresUser: cloudlaunch
     postgresPassword: some_pass
+
+cloudlaunch-server:
+    initial_data:
+      - clouds: true
+      - appliances: true

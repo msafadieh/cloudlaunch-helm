@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "cloudlaunch-server.fullname" . }}-initial-data
+  labels:
+    app: {{ template "cloudlaunch-server.name" . }}
+    chart: {{ template "cloudlaunch-server.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+data:
+  {{- range .Values.initial_data -}}
+  {{- range $key, $val := . -}}
+  {{- $data_file := printf "data/%s.json" $key }}
+  {{ $key }}.json: |-
+{{ $.Files.Get $data_file | indent 4 }}
+  {{- end }}
+  {{- end }}

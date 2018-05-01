@@ -6,7 +6,12 @@ image:
   repository: cloudve/cloudlaunch-server
   tag: latest
   pullPolicy: Always
-  
+
+# What initial data to import through django loaddata on startup.
+initial_data:
+    - clouds: true
+    - appliances: true
+
 service:
   type: ClusterIP
   port: 8000
