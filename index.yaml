@@ -59,4 +59,14 @@ entries:
     urls:
     - cloudlaunch-server/charts/rabbitmq-ha-1.3.2.tgz
     version: 1.3.2
+  cloudlaunch:
+  - appVersion: 2.0.2
+    created: 2018-05-15T17:18:18.638963341+05:30
+    description: A Helm chart for CloudLaunch, including the server and web UI
+    digest: 02d52b4a5e3a6db99f183c52d9cf7302ac6ad7dc65c6694329586a6c2e3cf337
+    home: http://cloudlaunch.cloudve.org/
+    name: cloudlaunch
+    urls:
+    - cloudlaunch/cloudlaunch-0.1.0.tgz
+    version: 0.1.0
 generated: 2018-04-27T20:37:12.333545961+05:30
