@@ -51,7 +51,7 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
             - name: CELERY_BROKER_URL
               value: amqp://{{ .Values.rabbitmq.rabbitmqUsername }}:{{ .Values.rabbitmq.rabbitmqPassword }}@{{ template "rabbitmq.fullname" . }}:5672/
             - name: DJANGO_SETTINGS_MODULE
-              value: cloudlaunchserver.settings_prod
+              value: {{ .Values.django_settings_module | default "cloudlaunchserver.settings_prod" | quote }}
             - name: CLOUDLAUNCH_DB_ENGINE
               value: postgresql_psycopg2
             - name: CLOUDLAUNCH_DB_NAME

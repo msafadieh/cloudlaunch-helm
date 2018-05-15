@@ -12,6 +12,9 @@ initial_data:
     - clouds: true
     - appliances: true
 
+# Django settings file to use
+django_settings_module: cloudlaunchserver.settings_prod
+
 service:
   type: ClusterIP
   port: 8000
