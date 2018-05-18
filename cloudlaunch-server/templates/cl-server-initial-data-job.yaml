@@ -26,7 +26,7 @@ spec:
   template:
     spec:
       containers:
-        - name: {{ $context.Chart.Name }}
+        - name: {{ $context.Values.container_name | default $context.Chart.Name }}
           image: "{{ $context.Values.image.repository }}:{{ $context.Values.image.tag }}"
           imagePullPolicy: {{ $context.Values.image.pullPolicy }}
           command: ['python', '{{ $context.Values.django_dir }}/manage.py', 'loaddata', {{ $data_file | quote }}]

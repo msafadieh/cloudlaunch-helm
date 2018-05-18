@@ -25,7 +25,7 @@ spec:
           configMap:
             name: {{ template "cloudlaunch.fullname" . }}-nginx-conf
       containers:
-        - name: {{ .Chart.Name }}
+        - name: {{ .Values.container_name | default .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:

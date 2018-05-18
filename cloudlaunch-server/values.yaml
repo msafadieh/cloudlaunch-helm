@@ -15,6 +15,7 @@ initial_data:
 nameOverride: cloudlaunch
 env_prefix: CLOUDLAUNCH
 celery_app_name: cloudlaunchserver
+container_name: cloudlaunch-server
 
 # Django settings file to use
 django_settings_module: cloudlaunchserver.settings_prod

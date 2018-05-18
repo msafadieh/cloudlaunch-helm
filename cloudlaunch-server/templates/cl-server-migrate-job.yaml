@@ -17,7 +17,7 @@ spec:
   template:
     spec:
       containers:
-        - name: {{ .Chart.Name }}
+        - name: {{ .Values.container_name | default .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: ['python', '{{ .Values.django_dir }}/manage.py', 'migrate']

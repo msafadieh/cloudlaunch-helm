@@ -11,6 +11,8 @@ service:
   type: ClusterIP
   port: 80
 
+container_name: cloudlaunch
+
 ingress:
   enabled: true
   annotations:
