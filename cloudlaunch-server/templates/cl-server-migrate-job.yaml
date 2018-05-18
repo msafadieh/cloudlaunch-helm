@@ -20,7 +20,7 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command: ['python', 'django-cloudlaunch/manage.py', 'migrate']
+          command: ['python', '{{ .Values.django_dir }}/manage.py', 'migrate']
           env:
           {{- include "cloudlaunch-server.envvars" . }}
       restartPolicy: Never

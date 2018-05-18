@@ -52,16 +52,16 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
               value: amqp://{{ .Values.rabbitmq.rabbitmqUsername }}:{{ .Values.rabbitmq.rabbitmqPassword }}@{{ template "rabbitmq.fullname" . }}:5672/
             - name: DJANGO_SETTINGS_MODULE
               value: {{ .Values.django_settings_module | default "cloudlaunchserver.settings_prod" | quote }}
-            - name: CLOUDLAUNCH_DB_ENGINE
+            - name: {{ .Values.env_prefix | default "CLOUDLAUNCH" | upper }}_DB_ENGINE
               value: postgresql_psycopg2
-            - name: CLOUDLAUNCH_DB_NAME
+            - name: {{ .Values.env_prefix | default "CLOUDLAUNCH" | upper }}_DB_NAME
               value: {{ .Values.postgresql.postgresDatabase | default "cloudlaunch" | quote }}
-            - name: CLOUDLAUNCH_DB_USER
+            - name: {{ .Values.env_prefix | default "CLOUDLAUNCH" | upper }}_DB_USER
               value: {{ .Values.postgresql.postgresUser | default "cloudlaunch" | quote }}
-            - name: CLOUDLAUNCH_DB_HOST
+            - name: {{ .Values.env_prefix | default "CLOUDLAUNCH" | upper }}_DB_HOST
               value: {{ template "postgresql.fullname" . }}
-            - name: CLOUDLAUNCH_DB_PORT
+            - name: {{ .Values.env_prefix | default "CLOUDLAUNCH" | upper }}_DB_PORT
               value: {{ .Values.postgresql.service.port | default 5432 | quote }}
-            - name: CLOUDLAUNCH_DB_PASSWORD
+            - name: {{ .Values.env_prefix | default "CLOUDLAUNCH" | upper }}_DB_PASSWORD
               value: {{ .Values.postgresql.postgresPassword | quote }}
 {{- end }}

@@ -54,6 +54,7 @@ postgresql:
     postgresPassword: some_pass
 
 cloudlaunch-server:
+    nameOverride: cloudlaunch
     initial_data:
       - clouds: true
       - appliances: true
