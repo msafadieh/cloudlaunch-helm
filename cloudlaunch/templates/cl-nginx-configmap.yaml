@@ -41,7 +41,7 @@ data:
         }
     
         location / {
-            alias   /usr/share/nginx/html;
+            alias   /usr/share/nginx/html/;
             try_files $uri @proxy /index.html =404;
         }
 
