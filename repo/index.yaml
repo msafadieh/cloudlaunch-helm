@@ -8,7 +8,7 @@ entries:
     home: http://cloudlaunch.cloudve.org/
     name: cloudlaunch-server
     urls:
-    - https://github.com/CloudVE/cloudlaunch-helm/raw/master/cloudlaunch-server/cloudlaunch-server-0.1.0.tgz
+    - https://github.com/CloudVE/cloudlaunch-helm/raw/master/cloudlaunch-server/repo/cloudlaunch-server-0.1.0.tgz
     version: 0.1.0
   postgresql:
   - appVersion: 9.6.2
@@ -67,6 +67,6 @@ entries:
     home: http://cloudlaunch.cloudve.org/
     name: cloudlaunch
     urls:
-    - https://github.com/CloudVE/cloudlaunch-helm/raw/master/cloudlaunch/cloudlaunch-0.1.0.tgz
+    - https://github.com/CloudVE/cloudlaunch-helm/raw/master/cloudlaunch/repo/cloudlaunch-0.1.0.tgz
     version: 0.1.0
 generated: 2018-04-27T20:37:12.333545961+05:30
