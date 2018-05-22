@@ -19,3 +19,5 @@
 .project
 .idea/
 *.tmproj
+# Ignore charts folder and package archive
+cloudlaunch.tar.gz
