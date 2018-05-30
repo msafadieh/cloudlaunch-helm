@@ -28,6 +28,16 @@ spec:
   {{- end }}
 {{- end }}
   rules:
+    - http:
+        paths:
+          - path: {{ $ingressPath }}
+            backend:
+              serviceName: {{ $fullName }}
+              servicePort: http
+          - path: {{ $ingressPath }}api/
+            backend:
+              serviceName: {{ $cloudlaunch_server }}
+              servicePort: 8000
   {{- range .Values.ingress.hosts }}
     - host: {{ . }}
       http:
