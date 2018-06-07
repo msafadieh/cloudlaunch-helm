@@ -66,3 +66,5 @@ postgresql:
     postgresDatabase: cloudlaunch
     postgresUser: cloudlaunch
     postgresPassword: some_pass
+    persistence:
+        accessMode: ReadWriteMany
