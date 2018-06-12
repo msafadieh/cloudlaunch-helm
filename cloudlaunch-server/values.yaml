@@ -22,7 +22,7 @@ django_settings_module: cloudlaunchserver.settings_prod
 django_dir: django-cloudlaunch
 
 # Extra environment variables to pass to container
-extra_env:
+extra_env: {}
 
 service:
   type: ClusterIP
