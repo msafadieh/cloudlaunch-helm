@@ -65,3 +65,15 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
             - name: {{ .Values.env_prefix | default "CLOUDLAUNCH" | upper }}_DB_PASSWORD
               value: {{ .Values.postgresql.postgresPassword | quote }}
 {{- end }}
+
+{{/*
+Create a template for expanding a section into env vars
+*/}}
+{{- define "cloudlaunch-server.generate_envvars" -}}
+{{- range $key, $val := .Values }}
+{{- if $val }}
+            - name: {{ $key | upper }}
+              value: {{ quote $val }}
+{{- end }}
+{{- end }}
+{{- end -}}

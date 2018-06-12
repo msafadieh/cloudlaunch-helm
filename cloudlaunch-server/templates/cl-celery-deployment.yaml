@@ -33,6 +33,7 @@ spec:
               protocol: TCP
           env:
           {{- include "cloudlaunch-server.envvars" . }}
+          {{- include "cloudlaunch-server.extra_envvars" .Values.extra_env }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}

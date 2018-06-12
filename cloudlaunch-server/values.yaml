@@ -21,6 +21,9 @@ container_name: cloudlaunch-server
 django_settings_module: cloudlaunchserver.settings_prod
 django_dir: django-cloudlaunch
 
+# Extra environment variables to pass to container
+extra_env:
+
 service:
   type: ClusterIP
   port: 8000
