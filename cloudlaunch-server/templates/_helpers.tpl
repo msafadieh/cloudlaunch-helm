@@ -69,7 +69,7 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{/*
 Create a template for expanding a section into env vars
 */}}
-{{- define "cloudlaunch-server.generate_envvars" -}}
+{{- define "cloudlaunch-server.extra_envvars" -}}
 {{- range $key, $val := .Values }}
 {{- if $val }}
             - name: {{ $key | upper }}
