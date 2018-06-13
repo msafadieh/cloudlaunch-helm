@@ -24,7 +24,7 @@ spec:
         - name: {{ .Values.container_name | default .Chart.Name }}-init
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command: ['{{ .Values.django_dir }}/scripts/init_container.sh']
+          command: ['/bin/sh', '{{ .Values.django_dir }}/scripts/init_container.sh']
           env:
             - name: DJANGO_ADMIN_PASSWORD
               value: {{ .Values.admin_password | quote }}
