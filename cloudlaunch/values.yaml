@@ -60,3 +60,6 @@ cloudlaunch-server:
     initial_data:
       - clouds: true
       - appliances: true
+    ingress:
+        enabled: true
+        path: /api

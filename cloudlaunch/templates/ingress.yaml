@@ -34,10 +34,6 @@ spec:
             backend:
               serviceName: {{ $fullName }}
               servicePort: http
-          - path: {{ $ingressPath }}api/
-            backend:
-              serviceName: {{ $cloudlaunch_server }}
-              servicePort: 8000
   {{- range .Values.ingress.hosts }}
     - host: {{ . }}
       http:
@@ -46,9 +42,5 @@ spec:
             backend:
               serviceName: {{ $fullName }}
               servicePort: http
-          - path: {{ $ingressPath }}api/
-            backend:
-              serviceName: {{ $cloudlaunch_server }}
-              servicePort: 8000
   {{- end }}
 {{- end }}

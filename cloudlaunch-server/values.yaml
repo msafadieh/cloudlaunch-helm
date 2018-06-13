@@ -9,8 +9,8 @@ image:
 
 # What initial data to import through django loaddata on startup.
 initial_data:
-    - clouds: true
-    - appliances: true
+  - clouds: true
+  - appliances: true
 
 nameOverride: cloudlaunch
 env_prefix: CLOUDLAUNCH
@@ -60,14 +60,14 @@ tolerations: []
 affinity: {}
 
 rabbitmq:
-    rabbitmqUsername: notAGuest
-    rabbitmqPassword: aRandomPassword
-    rabbitmqErlangCookie: mustRemainSameBetweenUpgrades
+  rabbitmqUsername: notAGuest
+  rabbitmqPassword: aRandomPassword
+  rabbitmqErlangCookie: mustRemainSameBetweenUpgrades
 
 postgresql:
-    enabled: true
-    postgresDatabase: cloudlaunch
-    postgresUser: cloudlaunch
-    postgresPassword: some_pass
-    persistence:
-        accessMode: ReadWriteMany
+  enabled: true
+  postgresDatabase: cloudlaunch
+  postgresUser: cloudlaunch
+  postgresPassword: some_pass
+  persistence:
+    accessMode: ReadWriteMany

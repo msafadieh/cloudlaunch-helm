@@ -32,7 +32,7 @@ spec:
           - path: {{ $ingressPath }}
             backend:
               serviceName: {{ $fullName }}
-              servicePort: http
+              servicePort: 8000
   {{- range .Values.ingress.hosts }}
     - host: {{ . }}
       http:
@@ -40,6 +40,6 @@ spec:
           - path: {{ $ingressPath }}
             backend:
               serviceName: {{ $fullName }}
-              servicePort: http
+              servicePort: 8000
   {{- end }}
 {{- end }}
