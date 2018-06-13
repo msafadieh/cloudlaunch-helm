@@ -20,6 +20,24 @@ spec:
         app: {{ template "cloudlaunch-server.name" . }}
         release: {{ .Release.Name }}
     spec:
+      initContainers:
+        - name: {{ .Values.container_name | default .Chart.Name }}-init
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ['{{ .Values.django_dir }}/scripts/init_container.sh']
+          env:
+            - name: DJANGO_ADMIN_PASSWORD
+              value: {{ .Values.admin_password | quote }}
+          {{- include "cloudlaunch-server.envvars" . }}
+          {{- include "cloudlaunch-server.extra_envvars" .Values.extra_env }}
+          volumeMounts:
+            - name: initial-data
+              mountPath: /app/initial_data
+              readOnly: true
+      volumes:
+        - name: initial-data
+          configMap:
+            name: {{ template "cloudlaunch-server.fullname" . }}-initial-data
       containers:
         - name: {{ .Values.container_name | default .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"

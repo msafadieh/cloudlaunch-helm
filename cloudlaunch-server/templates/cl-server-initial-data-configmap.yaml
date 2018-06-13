@@ -8,10 +8,17 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 data:
-  {{- range .Values.initial_data -}}
-  {{- range $key, $val := . -}}
+
+{{- /* Loop through the initial_data array in order, checking which data files are enabled.
+        The index determines the hook weight, so that the jobs are run in order
+    */ -}}
+{{- range $index, $dataset := .Values.initial_data -}}
+{{- /* Loop through inner map. Only render this job template if enabled. */ -}}
+{{- range $key, $val := $dataset -}}
+{{- if $val }}
   {{- $data_file := printf "data/%s.json" $key }}
   {{ $key }}.json: |-
 {{ $.Files.Get $data_file | indent 4 }}
-  {{- end }}
-  {{- end }}
+{{- end }}
+{{- end }}
+{{- end }}
