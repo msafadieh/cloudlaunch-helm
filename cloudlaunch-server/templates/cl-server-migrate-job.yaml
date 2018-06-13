@@ -23,4 +23,5 @@ spec:
           command: ['python', '{{ .Values.django_dir }}/manage.py', 'migrate']
           env:
           {{- include "cloudlaunch-server.envvars" . }}
+          {{- include "cloudlaunch-server.extra_envvars" .Values.extra_env }}
       restartPolicy: Never
