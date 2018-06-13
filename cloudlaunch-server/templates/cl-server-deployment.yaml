@@ -53,6 +53,8 @@ spec:
             tcpSocket:
               port: http
           env:
+            - name: HELMSMAN_AUTO_DEPLOY
+              value: "true"
           {{- include "cloudlaunch-server.envvars" . }}
           {{- include "cloudlaunch-server.extra_envvars" .Values.extra_env }}
           resources:

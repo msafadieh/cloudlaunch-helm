@@ -19,7 +19,7 @@ container_name: cloudlaunch-server
 
 # Django settings file to use
 django_settings_module: cloudlaunchserver.settings_prod
-django_dir: django-cloudlaunch
+django_dir: /app/django-cloudlaunch
 admin_password:
 
 # Extra environment variables to pass to container
