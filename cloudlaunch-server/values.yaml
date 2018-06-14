@@ -9,8 +9,8 @@ image:
 
 # What initial data to import through django loaddata on startup.
 initial_data:
-  - clouds: true
-  - appliances: true
+  - 1_clouds.json: true
+  - 2_appliances.json: true
 
 nameOverride: cloudlaunch
 env_prefix: CLOUDLAUNCH

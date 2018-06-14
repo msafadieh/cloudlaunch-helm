@@ -57,9 +57,6 @@ postgresql:
 
 cloudlaunch-server:
     nameOverride: cloudlaunch
-    initial_data:
-      - clouds: true
-      - appliances: true
     ingress:
         enabled: true
         path: /api

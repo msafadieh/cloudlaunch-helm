@@ -16,8 +16,8 @@ data:
 {{- /* Loop through inner map. Only render this job template if enabled. */ -}}
 {{- range $key, $val := $dataset -}}
 {{- if $val }}
-  {{- $data_file := printf "data/%s.json" $key }}
-  {{ $key }}.json: |-
+  {{- $data_file := printf "data/%s" $key }}
+  {{ $key }}: |-
 {{ $.Files.Get $data_file | indent 4 }}
 {{- end }}
 {{- end }}
