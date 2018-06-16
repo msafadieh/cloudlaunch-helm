@@ -56,7 +56,12 @@ spec:
             - name: HELMSMAN_AUTO_DEPLOY
               value: "true"
           {{- include "cloudlaunch-server.envvars" . }}
-          {{- include "cloudlaunch-server.extra_envvars" .Values.extra_env }}
+{{- range $key, $val := .Values.extra_env }}
+{{- if $val }}
+            - name: {{ $key | upper }}
+              value: "{{ tpl $val $ }}"
+{{- end }}
+{{- end }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}
