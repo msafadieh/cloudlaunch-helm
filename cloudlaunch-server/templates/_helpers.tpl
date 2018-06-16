@@ -64,6 +64,10 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
               value: {{ .Values.postgresql.service.port | default 5432 | quote }}
             - name: {{ .Values.env_prefix | default "CLOUDLAUNCH" | upper }}_DB_PASSWORD
               value: {{ .Values.postgresql.postgresPassword | quote }}
+            {{- if not (eq .Values.ingress.path "/") }}
+            - name: CLOUDLAUNCH_PATH_PREFIX
+              value: {{ .Values.ingress.path | quote }}
+            {{- end }}
 {{- end }}
 
 {{/*
