@@ -36,7 +36,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   path: /
   hosts:
-    - cloudlaunch-server.local
+    - ~
   protocol: https
   tls: []
   #  - secretName: chart-example-tls
