@@ -45,9 +45,10 @@ tolerations: []
 affinity: {}
 
 rabbitmq:
-    rabbitmqUsername: notAGuest
-    rabbitmqPassword: aRandomPassword
-    rabbitmqErlangCookie: mustRemainSameBetweenUpgrades
+  rabbitmq:
+      username: notAGuest
+      password: aRandomPassword
+      erlangCookie: mustRemainSameBetweenUpgrades
 
 postgresql:
     enabled: true
