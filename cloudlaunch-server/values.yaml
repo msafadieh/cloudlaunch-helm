@@ -65,6 +65,7 @@ rabbitmq:
   rabbitmqUsername: notAGuest
   rabbitmqPassword: aRandomPassword
   rabbitmqErlangCookie: mustRemainSameBetweenUpgrades
+  replicaCount: 1
 
 postgresql:
   enabled: true

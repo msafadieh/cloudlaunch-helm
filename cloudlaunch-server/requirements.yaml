@@ -4,5 +4,5 @@ dependencies:
       version: 0.10.0
     - name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
-      version: 1.3.2
+      version: 1.6.1
       alias: rabbitmq
