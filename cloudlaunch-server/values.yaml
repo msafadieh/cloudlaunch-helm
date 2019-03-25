@@ -69,8 +69,8 @@ rabbitmq:
 
 postgresql:
   enabled: true
-  postgresDatabase: cloudlaunch
-  postgresUser: cloudlaunch
-  postgresPassword: some_pass
+  postgresqlDatabase: cloudlaunch
+  postgresqlUsername: cloudlaunch
+  postgresqlPassword: some_pass
   persistence:
     accessMode: ReadWriteMany

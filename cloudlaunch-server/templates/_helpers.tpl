@@ -55,15 +55,15 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
             - name: {{ .Values.env_prefix | default "CLOUDLAUNCH" | upper }}_DB_ENGINE
               value: postgresql_psycopg2
             - name: {{ .Values.env_prefix | default "CLOUDLAUNCH" | upper }}_DB_NAME
-              value: {{ .Values.postgresql.postgresDatabase | default "cloudlaunch" | quote }}
+              value: {{ .Values.postgresql.postgresqlDatabase | default "cloudlaunch" | quote }}
             - name: {{ .Values.env_prefix | default "CLOUDLAUNCH" | upper }}_DB_USER
-              value: {{ .Values.postgresql.postgresUser | default "cloudlaunch" | quote }}
+              value: {{ .Values.postgresql.postgresqlUsername | default "cloudlaunch" | quote }}
             - name: {{ .Values.env_prefix | default "CLOUDLAUNCH" | upper }}_DB_HOST
               value: {{ template "postgresql.fullname" . }}
             - name: {{ .Values.env_prefix | default "CLOUDLAUNCH" | upper }}_DB_PORT
               value: {{ .Values.postgresql.service.port | default 5432 | quote }}
             - name: {{ .Values.env_prefix | default "CLOUDLAUNCH" | upper }}_DB_PASSWORD
-              value: {{ .Values.postgresql.postgresPassword | quote }}
+              value: {{ .Values.postgresql.postgresqlPassword | quote }}
             {{- if not (eq .Values.ingress.path "/") }}
             - name: CLOUDLAUNCH_PATH_PREFIX
               value: {{ .Values.ingress.path | quote }}
