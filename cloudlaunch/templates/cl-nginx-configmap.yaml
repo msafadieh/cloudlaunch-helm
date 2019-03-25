@@ -15,7 +15,9 @@ data:
     
     server {
         listen   *:80;
+{{- if join " " .Values.ingress.hosts }}
         server_name {{ join " " .Values.ingress.hosts }};
+{{- end }}
     
         client_max_body_size 4G;
         gzip on;
