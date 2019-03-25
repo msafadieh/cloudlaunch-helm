@@ -1,259 +1,591 @@
 [
 {
   "model": "djcloudbridge.cloud",
-  "pk": "amazon-ap-mumbai",
+  "pk": "aws",
   "fields": {
-    "added": "2017-11-15T09:00:21.485Z",
-    "updated": "2017-11-15T09:00:21.485Z",
-    "name": "Amazon AP - Mumbai",
-    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
-    "kind": "cloud"
+    "polymorphic_ctype": 18,
+    "name": "Amazon Web Services",
+    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key"
   }
 },
 {
   "model": "djcloudbridge.cloud",
-  "pk": "amazon-ap-seoul",
+  "pk": "azure",
   "fields": {
-    "added": "2017-01-30T21:15:52.293Z",
-    "updated": "2017-11-15T08:54:47.420Z",
-    "name": "Amazon AP - Seoul",
-    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
-    "kind": "cloud"
-  }
-},
-{
-  "model": "djcloudbridge.cloud",
-  "pk": "amazon-ap-singapore",
-  "fields": {
-    "added": "2017-11-15T09:01:31.206Z",
-    "updated": "2017-11-15T09:01:31.206Z",
-    "name": "Amazon AP - Singapore",
-    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
-    "kind": "cloud"
-  }
-},
-{
-  "model": "djcloudbridge.cloud",
-  "pk": "amazon-ap-sydney",
-  "fields": {
-    "added": "2016-06-26T03:13:18.315Z",
-    "updated": "2017-11-15T09:26:03.344Z",
-    "name": "Amazon AP - Sydney",
-    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
-    "kind": "cloud"
-  }
-},
-{
-  "model": "djcloudbridge.cloud",
-  "pk": "amazon-ap-tokyo",
-  "fields": {
-    "added": "2017-11-15T09:02:36.950Z",
-    "updated": "2017-11-15T09:02:36.950Z",
-    "name": "Amazon AP - Tokyo",
-    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
-    "kind": "cloud"
-  }
-},
-{
-  "model": "djcloudbridge.cloud",
-  "pk": "amazon-ca-canada",
-  "fields": {
-    "added": "2017-11-15T09:04:45.056Z",
-    "updated": "2017-11-15T09:04:45.056Z",
-    "name": "Amazon CA - Canada",
-    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
-    "kind": "cloud"
-  }
-},
-{
-  "model": "djcloudbridge.cloud",
-  "pk": "amazon-eu-frankfurt",
-  "fields": {
-    "added": "2016-06-26T03:11:01.179Z",
-    "updated": "2017-11-15T08:59:02.073Z",
-    "name": "Amazon EU - Frankfurt",
-    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
-    "kind": "cloud"
-  }
-},
-{
-  "model": "djcloudbridge.cloud",
-  "pk": "amazon-eu-west-1-ireland",
-  "fields": {
-    "added": "2017-01-06T04:44:48.179Z",
-    "updated": "2017-11-15T08:53:49.847Z",
-    "name": "Amazon EU West 1 - Ireland",
-    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
-    "kind": "cloud"
-  }
-},
-{
-  "model": "djcloudbridge.cloud",
-  "pk": "amazon-eu-west-2-england",
-  "fields": {
-    "added": "2017-11-15T08:53:53.846Z",
-    "updated": "2017-11-15T08:53:53.846Z",
-    "name": "Amazon EU West 2 - England",
-    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
-    "kind": "cloud"
-  }
-},
-{
-  "model": "djcloudbridge.cloud",
-  "pk": "amazon-sa-sao-paulo",
-  "fields": {
-    "added": "2017-11-15T09:06:06.848Z",
-    "updated": "2017-11-15T09:06:06.848Z",
-    "name": "Amazon SA - S\u00e3o Paulo",
-    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
-    "kind": "cloud"
-  }
-},
-{
-  "model": "djcloudbridge.cloud",
-  "pk": "amazon-us-east-2-ohio",
-  "fields": {
-    "added": "2017-03-02T21:57:34.571Z",
-    "updated": "2017-11-15T08:56:54.259Z",
-    "name": "Amazon US East 2 - Ohio",
-    "access_instructions_url": "https://new.galaxyproject.org/cloudman/getting-started/#amazon-cloud",
-    "kind": "cloud"
-  }
-},
-{
-  "model": "djcloudbridge.cloud",
-  "pk": "amazon-us-east-n-virginia",
-  "fields": {
-    "added": "2016-06-26T03:08:59.048Z",
-    "updated": "2017-11-15T08:49:03.900Z",
-    "name": "Amazon US East 1 - N. Virginia",
-    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
-    "kind": "cloud"
-  }
-},
-{
-  "model": "djcloudbridge.cloud",
-  "pk": "amazon-us-west-2-oregon",
-  "fields": {
-    "added": "2017-11-15T08:50:57.719Z",
-    "updated": "2017-11-15T08:50:57.719Z",
-    "name": "Amazon US West 2 - Oregon",
-    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
-    "kind": "cloud"
-  }
-},
-{
-  "model": "djcloudbridge.cloud",
-  "pk": "amazon-us-west-n-california",
-  "fields": {
-    "added": "2017-11-15T08:48:32.833Z",
-    "updated": "2017-11-15T08:49:21.139Z",
-    "name": "Amazon US West 1 - N. California",
-    "access_instructions_url": "https://aws-portal.amazon.com/gp/aws/developer/account/index.html?action=access-key",
-    "kind": "cloud"
+    "polymorphic_ctype": 20,
+    "name": "Microsoft Azure",
+    "access_instructions_url": null
   }
 },
 {
   "model": "djcloudbridge.cloud",
   "pk": "bwcloud",
   "fields": {
-    "added": "2016-12-23T13:04:26.905Z",
-    "updated": "2017-09-08T12:13:00.656Z",
+    "polymorphic_ctype": 25,
     "name": "de.NBI Cloud",
-    "access_instructions_url": "",
-    "kind": "cloud"
+    "access_instructions_url": ""
   }
 },
 {
   "model": "djcloudbridge.cloud",
   "pk": "chameleon",
   "fields": {
-    "added": "2016-06-29T04:18:44.681Z",
-    "updated": "2016-06-29T04:18:44.681Z",
+    "polymorphic_ctype": 25,
     "name": "Chameleon",
-    "access_instructions_url": null,
-    "kind": "cloud"
+    "access_instructions_url": null
+  }
+},
+{
+  "model": "djcloudbridge.cloud",
+  "pk": "cpouta-fn",
+  "fields": {
+    "polymorphic_ctype": 25,
+    "name": "cPouta (FN)",
+    "access_instructions_url": null
+  }
+},
+{
+  "model": "djcloudbridge.cloud",
+  "pk": "gcp",
+  "fields": {
+    "polymorphic_ctype": 23,
+    "name": "Google Cloud Platform",
+    "access_instructions_url": "http://cloudbridge.cloudve.org/en/latest/topics/procuring_credentials.html#google-compute-engine-gce"
   }
 },
 {
   "model": "djcloudbridge.cloud",
   "pk": "jetstream",
   "fields": {
-    "added": "2016-06-28T15:30:29.290Z",
-    "updated": "2017-11-15T18:54:41.055Z",
+    "polymorphic_ctype": 25,
     "name": "Jetstream",
-    "access_instructions_url": "https://galaxyproject.org/cloud/jetstream/allocation/#api-access",
-    "kind": "cloud"
+    "access_instructions_url": "https://galaxyproject.org/cloud/jetstream/allocation/#api-access"
   }
 },
 {
   "model": "djcloudbridge.cloud",
   "pk": "nectar",
   "fields": {
-    "added": "2016-06-26T02:53:50.475Z",
-    "updated": "2017-08-31T13:27:33.438Z",
+    "polymorphic_ctype": 25,
     "name": "NeCTAR",
-    "access_instructions_url": "http://vlsci.github.io/lscc_docs/tutorials/gvl_launch/gvl_launch/",
-    "kind": "cloud"
+    "access_instructions_url": "https://www.melbournebioinformatics.org.au/tutorials/tutorials/gvl_launch/gvl_launch/"
   }
 },
 {
-  "model": "djcloudbridge.aws",
-  "pk": "amazon-ap-mumbai",
+  "model": "djcloudbridge.region",
+  "pk": 1,
   "fields": {
-    "region_name": "ap-south-1",
-    "ec2_endpoint_url": "https://ec2.ap-south-1.amazonaws.com",
-    "ec2_is_secure": true,
-    "ec2_validate_certs": true,
-    "s3_endpoint_url": "https://s3.ap-south-1.amazonaws.com",
-    "s3_is_secure": true,
-    "s3_validate_certs": true
+    "polymorphic_ctype": 19,
+    "cloud": "aws",
+    "name": "ap-south-1",
+    "region_id": "ap-south-1"
   }
 },
 {
-  "model": "djcloudbridge.aws",
-  "pk": "amazon-ap-seoul",
+  "model": "djcloudbridge.region",
+  "pk": 2,
   "fields": {
-    "region_name": "ap-northeast-2",
-    "ec2_endpoint_url": "https://ec2.ap-northeast-2.amazonaws.com",
-    "ec2_is_secure": true,
-    "ec2_validate_certs": true,
-    "s3_endpoint_url": "https://s3.ap-northeast-2.amazonaws.com",
-    "s3_is_secure": true,
-    "s3_validate_certs": true
+    "polymorphic_ctype": 19,
+    "cloud": "aws",
+    "name": "ap-northeast-2",
+    "region_id": "ap-northeast-2"
   }
 },
 {
-  "model": "djcloudbridge.aws",
-  "pk": "amazon-ap-singapore",
+  "model": "djcloudbridge.region",
+  "pk": 3,
   "fields": {
-    "region_name": "ap-southeast-1",
-    "ec2_endpoint_url": "https://ec2.ap-southeast-1.amazonaws.com",
-    "ec2_is_secure": true,
-    "ec2_validate_certs": true,
-    "s3_endpoint_url": "https://s3.ap-southeast-1.amazonaws.com",
-    "s3_is_secure": true,
-    "s3_validate_certs": true
+    "polymorphic_ctype": 19,
+    "cloud": "aws",
+    "name": "ap-southeast-1",
+    "region_id": "ap-southeast-1"
   }
 },
 {
-  "model": "djcloudbridge.aws",
-  "pk": "amazon-ap-sydney",
+  "model": "djcloudbridge.region",
+  "pk": 4,
   "fields": {
-    "region_name": "ap-southeast-2",
-    "ec2_endpoint_url": "https://ec2.ap-southeast-2.amazonaws.com",
-    "ec2_is_secure": true,
-    "ec2_validate_certs": true,
-    "s3_endpoint_url": "https://s3.ap-southeast-2.amazonaws.com",
-    "s3_is_secure": true,
-    "s3_validate_certs": true
+    "polymorphic_ctype": 19,
+    "cloud": "aws",
+    "name": "ap-southeast-2",
+    "region_id": "ap-southeast-2"
   }
 },
 {
-  "model": "djcloudbridge.aws",
-  "pk": "amazon-ap-tokyo",
+  "model": "djcloudbridge.region",
+  "pk": 5,
   "fields": {
-    "region_name": "ap-northeast-1",
+    "polymorphic_ctype": 19,
+    "cloud": "aws",
+    "name": "ap-northeast-1",
+    "region_id": "ap-northeast-1"
+  }
+},
+{
+  "model": "djcloudbridge.region",
+  "pk": 6,
+  "fields": {
+    "polymorphic_ctype": 19,
+    "cloud": "aws",
+    "name": "ca-central-1",
+    "region_id": "ca-central-1"
+  }
+},
+{
+  "model": "djcloudbridge.region",
+  "pk": 7,
+  "fields": {
+    "polymorphic_ctype": 19,
+    "cloud": "aws",
+    "name": "eu-central-1",
+    "region_id": "eu-central-1"
+  }
+},
+{
+  "model": "djcloudbridge.region",
+  "pk": 8,
+  "fields": {
+    "polymorphic_ctype": 19,
+    "cloud": "aws",
+    "name": "eu-west-1",
+    "region_id": "eu-west-1"
+  }
+},
+{
+  "model": "djcloudbridge.region",
+  "pk": 9,
+  "fields": {
+    "polymorphic_ctype": 19,
+    "cloud": "aws",
+    "name": "eu-west-2",
+    "region_id": "eu-west-2"
+  }
+},
+{
+  "model": "djcloudbridge.region",
+  "pk": 10,
+  "fields": {
+    "polymorphic_ctype": 19,
+    "cloud": "aws",
+    "name": "sa-east-1",
+    "region_id": "sa-east-1"
+  }
+},
+{
+  "model": "djcloudbridge.region",
+  "pk": 11,
+  "fields": {
+    "polymorphic_ctype": 19,
+    "cloud": "aws",
+    "name": "us-east-1",
+    "region_id": "us-east-1"
+  }
+},
+{
+  "model": "djcloudbridge.region",
+  "pk": 12,
+  "fields": {
+    "polymorphic_ctype": 19,
+    "cloud": "aws",
+    "name": "us-east-2",
+    "region_id": "us-east-2"
+  }
+},
+{
+  "model": "djcloudbridge.region",
+  "pk": 13,
+  "fields": {
+    "polymorphic_ctype": 19,
+    "cloud": "aws",
+    "name": "us-west-1",
+    "region_id": "us-west-1"
+  }
+},
+{
+  "model": "djcloudbridge.region",
+  "pk": 14,
+  "fields": {
+    "polymorphic_ctype": 19,
+    "cloud": "aws",
+    "name": "us-west-2",
+    "region_id": "us-west-2"
+  }
+},
+{
+  "model": "djcloudbridge.region",
+  "pk": 15,
+  "fields": {
+    "polymorphic_ctype": 26,
+    "cloud": "chameleon",
+    "name": "RegionOne",
+    "region_id": "regionone"
+  }
+},
+{
+  "model": "djcloudbridge.region",
+  "pk": 16,
+  "fields": {
+    "polymorphic_ctype": 24,
+    "cloud": "gcp",
+    "name": "us-east1",
+    "region_id": "us-east1"
+  }
+},
+{
+  "model": "djcloudbridge.region",
+  "pk": 17,
+  "fields": {
+    "polymorphic_ctype": 26,
+    "cloud": "jetstream",
+    "name": "RegionOne",
+    "region_id": "regionone"
+  }
+},
+{
+  "model": "djcloudbridge.region",
+  "pk": 18,
+  "fields": {
+    "polymorphic_ctype": 21,
+    "cloud": "azure",
+    "name": "eastus",
+    "region_id": "eastus"
+  }
+},
+{
+  "model": "djcloudbridge.region",
+  "pk": 19,
+  "fields": {
+    "polymorphic_ctype": 21,
+    "cloud": "azure",
+    "name": "centralus",
+    "region_id": "centralus"
+  }
+},
+{
+  "model": "djcloudbridge.region",
+  "pk": 20,
+  "fields": {
+    "polymorphic_ctype": 21,
+    "cloud": "azure",
+    "name": "eastus",
+    "region_id": "eastus"
+  }
+},
+{
+  "model": "djcloudbridge.region",
+  "pk": 21,
+  "fields": {
+    "polymorphic_ctype": 21,
+    "cloud": "azure",
+    "name": "westus",
+    "region_id": "westus"
+  }
+},
+{
+  "model": "djcloudbridge.region",
+  "pk": 22,
+  "fields": {
+    "polymorphic_ctype": 26,
+    "cloud": "nectar",
+    "name": "Melbourne",
+    "region_id": "melbourne"
+  }
+},
+{
+  "model": "djcloudbridge.region",
+  "pk": 23,
+  "fields": {
+    "polymorphic_ctype": 26,
+    "cloud": "cpouta-fn",
+    "name": "regionOne",
+    "region_id": "regionone"
+  }
+},
+{
+  "model": "djcloudbridge.region",
+  "pk": 24,
+  "fields": {
+    "polymorphic_ctype": 26,
+    "cloud": "bwcloud",
+    "name": "Freiburg",
+    "region_id": "freiburg"
+  }
+},
+{
+  "model": "djcloudbridge.zone",
+  "pk": 1,
+  "fields": {
+    "zone_id": "default",
+    "region": 1,
+    "name": null
+  }
+},
+{
+  "model": "djcloudbridge.zone",
+  "pk": 2,
+  "fields": {
+    "zone_id": "default",
+    "region": 2,
+    "name": null
+  }
+},
+{
+  "model": "djcloudbridge.zone",
+  "pk": 3,
+  "fields": {
+    "zone_id": "default",
+    "region": 3,
+    "name": null
+  }
+},
+{
+  "model": "djcloudbridge.zone",
+  "pk": 4,
+  "fields": {
+    "zone_id": "default",
+    "region": 4,
+    "name": null
+  }
+},
+{
+  "model": "djcloudbridge.zone",
+  "pk": 5,
+  "fields": {
+    "zone_id": "default",
+    "region": 5,
+    "name": null
+  }
+},
+{
+  "model": "djcloudbridge.zone",
+  "pk": 6,
+  "fields": {
+    "zone_id": "default",
+    "region": 6,
+    "name": null
+  }
+},
+{
+  "model": "djcloudbridge.zone",
+  "pk": 7,
+  "fields": {
+    "zone_id": "default",
+    "region": 7,
+    "name": null
+  }
+},
+{
+  "model": "djcloudbridge.zone",
+  "pk": 8,
+  "fields": {
+    "zone_id": "default",
+    "region": 8,
+    "name": null
+  }
+},
+{
+  "model": "djcloudbridge.zone",
+  "pk": 9,
+  "fields": {
+    "zone_id": "default",
+    "region": 9,
+    "name": null
+  }
+},
+{
+  "model": "djcloudbridge.zone",
+  "pk": 10,
+  "fields": {
+    "zone_id": "default",
+    "region": 10,
+    "name": null
+  }
+},
+{
+  "model": "djcloudbridge.zone",
+  "pk": 11,
+  "fields": {
+    "zone_id": "default",
+    "region": 11,
+    "name": null
+  }
+},
+{
+  "model": "djcloudbridge.zone",
+  "pk": 12,
+  "fields": {
+    "zone_id": "default",
+    "region": 12,
+    "name": null
+  }
+},
+{
+  "model": "djcloudbridge.zone",
+  "pk": 13,
+  "fields": {
+    "zone_id": "default",
+    "region": 13,
+    "name": null
+  }
+},
+{
+  "model": "djcloudbridge.zone",
+  "pk": 14,
+  "fields": {
+    "zone_id": "default",
+    "region": 14,
+    "name": null
+  }
+},
+{
+  "model": "djcloudbridge.zone",
+  "pk": 15,
+  "fields": {
+    "zone_id": "default",
+    "region": 15,
+    "name": null
+  }
+},
+{
+  "model": "djcloudbridge.zone",
+  "pk": 16,
+  "fields": {
+    "zone_id": "default",
+    "region": 16,
+    "name": null
+  }
+},
+{
+  "model": "djcloudbridge.zone",
+  "pk": 17,
+  "fields": {
+    "zone_id": "default",
+    "region": 17,
+    "name": null
+  }
+},
+{
+  "model": "djcloudbridge.zone",
+  "pk": 18,
+  "fields": {
+    "zone_id": "default",
+    "region": 18,
+    "name": null
+  }
+},
+{
+  "model": "djcloudbridge.zone",
+  "pk": 19,
+  "fields": {
+    "zone_id": "default",
+    "region": 19,
+    "name": null
+  }
+},
+{
+  "model": "djcloudbridge.zone",
+  "pk": 20,
+  "fields": {
+    "zone_id": "default",
+    "region": 20,
+    "name": null
+  }
+},
+{
+  "model": "djcloudbridge.zone",
+  "pk": 21,
+  "fields": {
+    "zone_id": "default",
+    "region": 21,
+    "name": null
+  }
+},
+{
+  "model": "djcloudbridge.zone",
+  "pk": 22,
+  "fields": {
+    "zone_id": "default",
+    "region": 22,
+    "name": null
+  }
+},
+{
+  "model": "djcloudbridge.zone",
+  "pk": 23,
+  "fields": {
+    "zone_id": "default",
+    "region": 23,
+    "name": null
+  }
+},
+{
+  "model": "djcloudbridge.zone",
+  "pk": 24,
+  "fields": {
+    "zone_id": "default",
+    "region": 24,
+    "name": null
+  }
+},
+{
+  "model": "djcloudbridge.awscloud",
+  "pk": "aws",
+  "fields": {}
+},
+{
+  "model": "djcloudbridge.azurecloud",
+  "pk": "azure",
+  "fields": {}
+},
+{
+  "model": "djcloudbridge.gcpcloud",
+  "pk": "gcp",
+  "fields": {}
+},
+{
+  "model": "djcloudbridge.openstackcloud",
+  "pk": "chameleon",
+  "fields": {
+    "auth_url": "https://openstack.tacc.chameleoncloud.org:5000/v2.0",
+    "identity_api_version": null
+  }
+},
+{
+  "model": "djcloudbridge.openstackcloud",
+  "pk": "jetstream",
+  "fields": {
+    "auth_url": "https://jblb.jetstream-cloud.org:35357/v3",
+    "identity_api_version": "v3.0"
+  }
+},
+{
+  "model": "djcloudbridge.openstackcloud",
+  "pk": "nectar",
+  "fields": {
+    "auth_url": "https://keystone.rc.nectar.org.au:5000/v3/",
+    "identity_api_version": "v3.0"
+  }
+},
+{
+  "model": "djcloudbridge.openstackcloud",
+  "pk": "cpouta-fn",
+  "fields": {
+    "auth_url": "https://pouta.csc.fi:5001/v3",
+    "identity_api_version": "v3.0"
+  }
+},
+{
+  "model": "djcloudbridge.openstackcloud",
+  "pk": "bwcloud",
+  "fields": {
+    "auth_url": "https://bwcloud.ruf.uni-freiburg.de:5000/v2.0",
+    "identity_api_version": "v2.0"
+  }
+},
+{
+  "model": "djcloudbridge.awsregion",
+  "pk": 5,
+  "fields": {
     "ec2_endpoint_url": "https://ec2.ap-northeast-1.amazonaws.com",
     "ec2_is_secure": true,
     "ec2_validate_certs": true,
@@ -263,10 +595,57 @@
   }
 },
 {
-  "model": "djcloudbridge.aws",
-  "pk": "amazon-ca-canada",
+  "model": "djcloudbridge.awsregion",
+  "pk": 2,
   "fields": {
-    "region_name": "ca-central-1",
+    "ec2_endpoint_url": "https://ec2.ap-northeast-2.amazonaws.com",
+    "ec2_is_secure": true,
+    "ec2_validate_certs": true,
+    "s3_endpoint_url": "https://s3.ap-northeast-2.amazonaws.com",
+    "s3_is_secure": true,
+    "s3_validate_certs": true
+  }
+},
+{
+  "model": "djcloudbridge.awsregion",
+  "pk": 1,
+  "fields": {
+    "ec2_endpoint_url": "https://ec2.ap-south-1.amazonaws.com",
+    "ec2_is_secure": true,
+    "ec2_validate_certs": true,
+    "s3_endpoint_url": "https://s3.ap-south-1.amazonaws.com",
+    "s3_is_secure": true,
+    "s3_validate_certs": true
+  }
+},
+{
+  "model": "djcloudbridge.awsregion",
+  "pk": 3,
+  "fields": {
+    "ec2_endpoint_url": "https://ec2.ap-southeast-1.amazonaws.com",
+    "ec2_is_secure": true,
+    "ec2_validate_certs": true,
+    "s3_endpoint_url": "https://s3.ap-southeast-1.amazonaws.com",
+    "s3_is_secure": true,
+    "s3_validate_certs": true
+  }
+},
+{
+  "model": "djcloudbridge.awsregion",
+  "pk": 4,
+  "fields": {
+    "ec2_endpoint_url": "https://ec2.ap-southeast-2.amazonaws.com",
+    "ec2_is_secure": true,
+    "ec2_validate_certs": true,
+    "s3_endpoint_url": "https://s3.ap-southeast-2.amazonaws.com",
+    "s3_is_secure": true,
+    "s3_validate_certs": true
+  }
+},
+{
+  "model": "djcloudbridge.awsregion",
+  "pk": 6,
+  "fields": {
     "ec2_endpoint_url": "https://ec2.ca-central-1.amazonaws.com",
     "ec2_is_secure": true,
     "ec2_validate_certs": true,
@@ -276,10 +655,9 @@
   }
 },
 {
-  "model": "djcloudbridge.aws",
-  "pk": "amazon-eu-frankfurt",
+  "model": "djcloudbridge.awsregion",
+  "pk": 7,
   "fields": {
-    "region_name": "eu-central-1",
     "ec2_endpoint_url": "https://ec2.eu-central-1.amazonaws.com",
     "ec2_is_secure": true,
     "ec2_validate_certs": true,
@@ -289,10 +667,9 @@
   }
 },
 {
-  "model": "djcloudbridge.aws",
-  "pk": "amazon-eu-west-1-ireland",
+  "model": "djcloudbridge.awsregion",
+  "pk": 8,
   "fields": {
-    "region_name": "eu-west-1",
     "ec2_endpoint_url": "https://ec2.eu-west-1.amazonaws.com",
     "ec2_is_secure": true,
     "ec2_validate_certs": true,
@@ -302,10 +679,9 @@
   }
 },
 {
-  "model": "djcloudbridge.aws",
-  "pk": "amazon-eu-west-2-england",
+  "model": "djcloudbridge.awsregion",
+  "pk": 9,
   "fields": {
-    "region_name": "eu-west-2",
     "ec2_endpoint_url": "https://ec2.eu-west-2.amazonaws.com",
     "ec2_is_secure": true,
     "ec2_validate_certs": true,
@@ -315,10 +691,9 @@
   }
 },
 {
-  "model": "djcloudbridge.aws",
-  "pk": "amazon-sa-sao-paulo",
+  "model": "djcloudbridge.awsregion",
+  "pk": 10,
   "fields": {
-    "region_name": "sa-east-1",
     "ec2_endpoint_url": "https://ec2.sa-east-1.amazonaws.com",
     "ec2_is_secure": true,
     "ec2_validate_certs": true,
@@ -328,10 +703,9 @@
   }
 },
 {
-  "model": "djcloudbridge.aws",
-  "pk": "amazon-us-east-n-virginia",
+  "model": "djcloudbridge.awsregion",
+  "pk": 11,
   "fields": {
-    "region_name": "us-east-1",
     "ec2_endpoint_url": "https://ec2.us-east-1.amazonaws.com",
     "ec2_is_secure": true,
     "ec2_validate_certs": true,
@@ -341,10 +715,9 @@
   }
 },
 {
-  "model": "djcloudbridge.aws",
-  "pk": "amazon-us-east-2-ohio",
+  "model": "djcloudbridge.awsregion",
+  "pk": 12,
   "fields": {
-    "region_name": "us-east-2",
     "ec2_endpoint_url": "https://ec2.us-east-2.amazonaws.com",
     "ec2_is_secure": true,
     "ec2_validate_certs": true,
@@ -354,10 +727,9 @@
   }
 },
 {
-  "model": "djcloudbridge.aws",
-  "pk": "amazon-us-west-n-california",
+  "model": "djcloudbridge.awsregion",
+  "pk": 13,
   "fields": {
-    "region_name": "us-west-1",
     "ec2_endpoint_url": "https://ec2.us-west-1.amazonaws.com",
     "ec2_is_secure": true,
     "ec2_validate_certs": true,
@@ -367,10 +739,9 @@
   }
 },
 {
-  "model": "djcloudbridge.aws",
-  "pk": "amazon-us-west-2-oregon",
+  "model": "djcloudbridge.awsregion",
+  "pk": 14,
   "fields": {
-    "region_name": "us-west-2",
     "ec2_endpoint_url": "https://ec2.us-west-2.amazonaws.com",
     "ec2_is_secure": true,
     "ec2_validate_certs": true,
@@ -380,39 +751,53 @@
   }
 },
 {
-  "model": "djcloudbridge.openstack",
-  "pk": "chameleon",
-  "fields": {
-    "auth_url": "https://openstack.tacc.chameleoncloud.org:5000/v2.0",
-    "region_name": "RegionOne",
-    "identity_api_version": null
-  }
+  "model": "djcloudbridge.azureregion",
+  "pk": 19,
+  "fields": {}
 },
 {
-  "model": "djcloudbridge.openstack",
-  "pk": "bwcloud",
-  "fields": {
-    "auth_url": "https://bwcloud.ruf.uni-freiburg.de:5000/v2.0",
-    "region_name": "Freiburg",
-    "identity_api_version": "v2.0"
-  }
+  "model": "djcloudbridge.azureregion",
+  "pk": 18,
+  "fields": {}
 },
 {
-  "model": "djcloudbridge.openstack",
-  "pk": "jetstream",
-  "fields": {
-    "auth_url": "https://jblb.jetstream-cloud.org:35357/v3",
-    "region_name": "RegionOne",
-    "identity_api_version": "v3.0"
-  }
+  "model": "djcloudbridge.azureregion",
+  "pk": 20,
+  "fields": {}
 },
 {
-  "model": "djcloudbridge.openstack",
-  "pk": "nectar",
-  "fields": {
-    "auth_url": "https://keystone.rc.nectar.org.au:5000/v3/",
-    "region_name": "Melbourne",
-    "identity_api_version": "v3.0"
-  }
+  "model": "djcloudbridge.azureregion",
+  "pk": 21,
+  "fields": {}
+},
+{
+  "model": "djcloudbridge.gcpregion",
+  "pk": 16,
+  "fields": {}
+},
+{
+  "model": "djcloudbridge.openstackregion",
+  "pk": 24,
+  "fields": {}
+},
+{
+  "model": "djcloudbridge.openstackregion",
+  "pk": 22,
+  "fields": {}
+},
+{
+  "model": "djcloudbridge.openstackregion",
+  "pk": 15,
+  "fields": {}
+},
+{
+  "model": "djcloudbridge.openstackregion",
+  "pk": 17,
+  "fields": {}
+},
+{
+  "model": "djcloudbridge.openstackregion",
+  "pk": 23,
+  "fields": {}
 }
 ]
