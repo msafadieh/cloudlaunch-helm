@@ -2976,13 +2976,6 @@
 },
 {
   "model": "cloudlaunch.applicationversioncloudconfig",
-  "pk": 39,
-  "fields": {
-    "image": 94
-  }
-},
-{
-  "model": "cloudlaunch.applicationversioncloudconfig",
   "pk": 40,
   "fields": {
     "image": 94

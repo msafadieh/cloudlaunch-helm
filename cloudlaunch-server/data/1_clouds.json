@@ -267,8 +267,8 @@
   "fields": {
     "polymorphic_ctype": 21,
     "cloud": "azure",
-    "name": "eastus",
-    "region_id": "eastus"
+    "name": "canadacentral",
+    "region_id": "canadacentral"
   }
 },
 {
