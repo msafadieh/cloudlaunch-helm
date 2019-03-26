@@ -48,4 +48,4 @@ cloudlaunch-server:
     nameOverride: cloudlaunch
     ingress:
         enabled: true
-        path: /api
+        path: /cloudlaunch
