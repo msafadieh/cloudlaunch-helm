@@ -47,6 +47,28 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{- printf "%s-%s" .Release.Name "rabbitmq" | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
+{{/*
+Return django secret key
+*/}}
+{{- define "cloudlaunch-server.secret_key" -}}
+{{- if .Values.secret_key }}
+    {{- .Values.secret_key -}}
+{{- else -}}
+    {{- randAlphaNum 10 -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Return django fernet keys
+*/}}
+{{- define "cloudlaunch-server.fernet_keys" -}}
+{{- if .Values.fernet_keys }}
+    {{- join "," .Values.fernet_keys -}}
+{{- else -}}
+    {{- randAlphaNum 10 -}}
+{{- end -}}
+{{- end -}}
+
 {{- define "cloudlaunch-server.envvars" }}
             - name: CELERY_BROKER_URL
               value: amqp://{{ .Values.rabbitmq.rabbitmqUsername }}:{{ .Values.rabbitmq.rabbitmqPassword }}@{{ template "rabbitmq.fullname" . }}:5672/
@@ -68,6 +90,18 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
             - name: CLOUDLAUNCH_PATH_PREFIX
               value: {{ .Values.ingress.path | quote }}
             {{- end }}
+            - name: {{ .Values.env_prefix | default "CLOUDLAUNCH" | upper }}_SENTRY_DSN
+              value: {{ .Values.sentry_dsn | default "CHANGEONINSTALL" | quote }}
+            - name: {{ .Values.env_prefix | default "CLOUDLAUNCH" | upper }}_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "cloudlaunch-server.fullname" . }}
+                  key: cloudlaunch-secret-key
+            - name: {{ .Values.env_prefix | default "CLOUDLAUNCH" | upper }}_FERNET_KEYS
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "cloudlaunch-server.fullname" . }}
+                  key: cloudlaunch-fernet-keys
 {{- end }}
 
 {{/*

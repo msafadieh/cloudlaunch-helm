@@ -21,6 +21,9 @@ container_name: cloudlaunch-server
 django_settings_module: cloudlaunchserver.settings_prod
 django_dir: /app/django-cloudlaunch
 admin_password:
+sentry_dns:
+secret_key:
+fernet_keys: []
 
 # Extra environment variables to pass to container
 extra_env: {}
