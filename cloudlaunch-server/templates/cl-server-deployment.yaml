@@ -1,5 +1,5 @@
 ---
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ template "cloudlaunch-server.fullname" . }}
@@ -8,17 +8,20 @@ metadata:
     chart: {{ template "cloudlaunch-server.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
+    component: django
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: {{ template "cloudlaunch-server.name" . }}
       release: {{ .Release.Name }}
+      component: django
   template:
     metadata:
       labels:
         app: {{ template "cloudlaunch-server.name" . }}
         release: {{ .Release.Name }}
+        component: django
     spec:
       initContainers:
         - name: {{ .Values.container_name | default .Chart.Name }}-init

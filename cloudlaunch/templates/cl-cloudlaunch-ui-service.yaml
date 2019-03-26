@@ -17,3 +17,4 @@ spec:
   selector:
     app: {{ template "cloudlaunch.name" . }}
     release: {{ .Release.Name }}
+    component: frontend

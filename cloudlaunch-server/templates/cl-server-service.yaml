@@ -17,3 +17,5 @@ spec:
   selector:
     app: {{ template "cloudlaunch-server.name" . }}
     release: {{ .Release.Name }}
+    # Also match component so that all matching pods aren't included in this service
+    component: django

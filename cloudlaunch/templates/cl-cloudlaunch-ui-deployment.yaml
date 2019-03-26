@@ -1,5 +1,5 @@
 ---
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ template "cloudlaunch.fullname" . }}-ui
@@ -8,17 +8,20 @@ metadata:
     chart: {{ template "cloudlaunch.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
+    component: frontend
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: {{ template "cloudlaunch.name" . }}
       release: {{ .Release.Name }}
+      component: frontend
   template:
     metadata:
       labels:
         app: {{ template "cloudlaunch.name" . }}
         release: {{ .Release.Name }}
+        component: frontend
     spec:
       volumes:
         - name: nginx-config
