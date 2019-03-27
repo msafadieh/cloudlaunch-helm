@@ -11,8 +11,10 @@ metadata:
     chart: {{ template "cloudlaunch-server.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
-{{- with .Values.ingress.annotations }}
   annotations:
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      proxy_set_header SCRIPT_NAME /cloudlaunch;
+{{- with .Values.ingress.annotations }}
 {{ toYaml . | indent 4 }}
 {{- end }}
 spec:
