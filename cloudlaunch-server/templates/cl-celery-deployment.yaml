@@ -28,7 +28,7 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command:
-            - celery
+            - /app/venv/bin/celery
           args: ["-E", "-A", {{ .Values.celery_app_name | default "cloudlaunchserver" | quote }}, "-l", "info", "--beat", "worker"]
           ports:
             - name: http
