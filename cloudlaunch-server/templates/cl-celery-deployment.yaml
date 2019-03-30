@@ -23,6 +23,8 @@ spec:
         release: {{ .Release.Name }}
         component: celery
     spec:
+      # Give 30 mins for celery worker to finish
+      terminationGracePeriodSeconds: 1800
       containers:
         - name: {{ .Values.container_name | default .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -30,6 +32,11 @@ spec:
           command:
             - /app/venv/bin/celery
           args: ["-E", "-A", {{ .Values.celery_app_name | default "cloudlaunchserver" | quote }}, "-l", "info", "--beat", "worker"]
+          lifecycle:
+            preStop:
+              exec:
+                # Trigger a graceful shutdown of the worker by sending SIGTERM
+                command: ["pkill", "-f", "celery"]
           ports:
             - name: http
               containerPort: 8000
