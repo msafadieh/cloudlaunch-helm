@@ -52,6 +52,11 @@ spec:
             - name: scripts
               mountPath: /app/scripts
               readOnly: true
+          {{- range .Values.extra_config_mounts }}
+            - name: {{ .name }}
+              mountPath: {{ .mount_path }}
+              readOnly: {{ .read_only }}
+          {{- end }}
           {{- range .Values.extra_secret_mounts }}
             - name: {{ .name }}
               mountPath: {{ .mount_path }}
@@ -64,6 +69,11 @@ spec:
         - name: scripts
           configMap:
             name: {{ template "cloudlaunch-server.fullname" . }}-init-scripts
+        {{- range .Values.extra_config_mounts }}
+         - name: {{ .name }}
+           configMap:
+             name: {{ tpl .config_name $ }}
+        {{- end }}
         {{- range .Values.extra_secret_mounts }}
          - name: {{ .name }}
            secret:

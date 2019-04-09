@@ -27,11 +27,20 @@ fernet_keys: []
 
 # Extra environment variables to pass to container
 extra_env: {}
+
 extra_init_scripts: {}
 # extra_init_scripts:
 #   my_init_script.sh:|
 #      #!/bin/sh
 #      echo "Do something."
+
+extra_config_mounts: []
+#extra_config_mounts:
+#  - name: cloudman_extras
+#    mount_path: /app/extra
+#    config_name: "{{ template "cloudman.fullname" . }}-config"
+#    read_only: true
+
 extra_secret_mounts: []
 #extra_secret_mounts:
 #  - name: cloudman_bootstrap
