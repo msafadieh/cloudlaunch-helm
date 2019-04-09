@@ -14,7 +14,6 @@ fi
 echo "Load initial data from /app/initial_data/*.json"
 /app/venv/bin/python manage.py loaddata /app/initial_data/*.json
 
-
 echo "Create a superuser"
 cat /app/scripts/create_superuser.py | /app/venv/bin/python manage.py shell
 errcode=$?

@@ -27,7 +27,7 @@ spec:
         - name: {{ .Values.container_name | default .Chart.Name }}-init
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command: ["/bin/sh", "/app/scripts/init_container.sh"]
+          command: ["/bin/run-parts", "--exit-on-error", "--verbose", "/app/scripts/"]
           workingDir: "{{ .Values.django_dir }}"
           env:
             - name: DJANGO_ADMIN_PASSWORD
@@ -52,6 +52,11 @@ spec:
             - name: scripts
               mountPath: /app/scripts
               readOnly: true
+          {{- range .Values.extra_secret_mounts }}
+            - name: {{ .name }}
+              mountPath: {{ .mount_path }}
+              readOnly: {{ .read_only }}
+          {{- end }}
       volumes:
         - name: initial-data
           configMap:
@@ -59,6 +64,11 @@ spec:
         - name: scripts
           configMap:
             name: {{ template "cloudlaunch-server.fullname" . }}-init-scripts
+        {{- range .Values.extra_secret_mounts }}
+         - name: {{ .name }}
+           secret:
+             secretName: {{ tpl .secret_name $ }}
+        {{- end }}
       containers:
         - name: {{ .Values.container_name | default .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"

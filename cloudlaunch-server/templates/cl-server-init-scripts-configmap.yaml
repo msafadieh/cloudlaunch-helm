@@ -11,4 +11,9 @@ data:
   create_superuser.py: |
 {{ $.Files.Get "scripts/create_superuser.py" | indent 4 }}
   init_container.sh: |
-{{ $.Files.Get "scripts/init_container.sh" | indent 4 }}
+{{ $.Files.Get "scripts/0_init_container.sh" | indent 4 }}
+{{- if .Values.extra_init_scripts }}
+{{- with .Values.extra_init_scripts }}
+{{ toYaml . | indent 2 }}
+{{- end }}
+{{- end }}

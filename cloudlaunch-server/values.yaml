@@ -27,6 +27,17 @@ fernet_keys: []
 
 # Extra environment variables to pass to container
 extra_env: {}
+extra_init_scripts: {}
+# extra_init_scripts:
+#   my_init_script.sh:|
+#      #!/bin/sh
+#      echo "Do something."
+extra_secret_mounts: []
+#extra_secret_mounts:
+#  - name: cloudman_bootstrap
+#    mount_path: /app/secrets
+#    secret_name: "{{ template "cloudman.fullname" . }}-secret"
+#    read_only: true
 
 service:
   type: ClusterIP
