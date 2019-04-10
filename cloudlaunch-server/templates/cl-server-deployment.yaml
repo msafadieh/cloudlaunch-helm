@@ -70,14 +70,14 @@ spec:
           configMap:
             name: {{ template "cloudlaunch-server.fullname" . }}-init-scripts
         {{- range .Values.extra_config_mounts }}
-         - name: {{ .name }}
-           configMap:
-             name: {{ tpl .config_name $ }}
+        - name: {{ .name }}
+          configMap:
+            name: {{ tpl .config_name $ }}
         {{- end }}
         {{- range .Values.extra_secret_mounts }}
-         - name: {{ .name }}
-           secret:
-             secretName: {{ tpl .secret_name $ }}
+        - name: {{ .name }}
+          secret:
+            secretName: {{ tpl .secret_name $ }}
         {{- end }}
       containers:
         - name: {{ .Values.container_name | default .Chart.Name }}
