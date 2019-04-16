@@ -12,8 +12,8 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
   annotations:
-    nginx.ingress.kubernetes.io/configuration-snippet: |
-      proxy_set_header SCRIPT_NAME {{ .Values.ingress.path }};
+{{/*    nginx.ingress.kubernetes.io/configuration-snippet: |*/}}
+{{/*      proxy_set_header SCRIPT_NAME {{ .Values.ingress.path }};*/}}
 {{- with .Values.ingress.annotations }}
 {{ toYaml . | indent 4 }}
 {{- end }}
