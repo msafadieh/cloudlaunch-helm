@@ -54,12 +54,6 @@ spec:
               containerPort: 8000
               protocol: TCP
           env:
-{{- /*
-  Trick to globally disable certificate verification as OIDC will fail due to unverified certificate
-  https://stackoverflow.com/questions/48391750/disable-python-requests-ssl-validation-for-an-imported-module?rq=1
-*/}}
-            - name: CURL_CA_BUNDLE
-              value: ""
           {{- include "cloudlaunch-server.envvars" . }}
 {{- range $key, $val := .Values.extra_env }}
 {{- if $val }}

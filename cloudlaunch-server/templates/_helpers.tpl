@@ -86,10 +86,10 @@ Return django fernet keys
               value: {{ .Values.postgresql.service.port | default 5432 | quote }}
             - name: {{ .Values.env_prefix | default "CLOUDLAUNCH" | upper }}_DB_PASSWORD
               value: {{ .Values.postgresql.postgresqlPassword | quote }}
-            {{- if not (eq .Values.ingress.path "/") }}
-            - name: CLOUDLAUNCH_PATH_PREFIX
-              value: {{ .Values.ingress.path | quote }}
-            {{- end }}
+{{/*            {{- if not (eq .Values.ingress.path "/") }}*/}}
+{{/*            - name: CLOUDLAUNCH_PATH_PREFIX*/}}
+{{/*              value: {{ .Values.ingress.path | quote }}*/}}
+{{/*            {{- end }}*/}}
             - name: {{ .Values.env_prefix | default "CLOUDLAUNCH" | upper }}_SENTRY_DSN
               value: {{ .Values.sentry_dsn | default "CHANGEONINSTALL" | quote }}
             - name: {{ .Values.env_prefix | default "CLOUDLAUNCH" | upper }}_SECRET_KEY
@@ -102,6 +102,15 @@ Return django fernet keys
                 secretKeyRef:
                   name: {{ template "cloudlaunch-server.fullname" . }}
                   key: cloudlaunch-fernet-keys
+{{- /*
+  Trick to globally disable certificate verification as OIDC will fail due to unverified certificate
+  https://stackoverflow.com/questions/48391750/disable-python-requests-ssl-validation-for-an-imported-module?rq=1
+*/}}
+            - name: CURL_CA_BUNDLE
+              value: ""
+            # Fix for import issue: https://github.com/travis-ci/travis-ci/issues/7940
+            - name: BOTO_CONFIG
+              value: "/dev/null"
 {{- end }}
 
 {{/*
