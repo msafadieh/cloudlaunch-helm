@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "Apply database migrations from `pwd`"
-python manage.py migrate
+/app/venv/bin/python manage.py migrate
 # Save last error
 errcode=$?
 if [ $errcode -eq 0 ]; then
@@ -12,10 +12,10 @@ else
 fi
 
 echo "Load initial data from /app/initial_data/*.json"
-python manage.py loaddata /app/initial_data/*.json
+/app/venv/bin/python manage.py loaddata /app/initial_data/*.json
 
 echo "Create a superuser"
-cat /app/scripts/create_superuser.py | python manage.py shell
+cat /app/scripts/create_superuser.py | /app/venv/bin/python manage.py shell
 errcode=$?
 if [ $errcode -eq 0 ]; then
     echo "Successfully created the superuser"

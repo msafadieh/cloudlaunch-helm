@@ -30,9 +30,8 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command:
-            - celery
-          args: ["-E", "-A", {{ .Values.celery_app_name | default "cloudlaunchserver" | quote }},
-                 "-l", "info", "--beat", "worker"]
+            - /bin/bash
+          args: ["-c", 'source /app/venv/bin/activate && /app/venv/bin/celery -E -A {{ .Values.celery_app_name | default "cloudlaunchserver" | quote }} -l debug --beat worker']
           lifecycle:
             preStop:
               exec:
@@ -42,13 +41,13 @@ spec:
             exec:
               command: ["bash",
                         "-c",
-                        "celery inspect ping -A {{ .Values.celery_app_name | default "cloudlaunchserver" }} -d celery@$HOSTNAME"]
+                        "/app/venv/bin/celery inspect ping -A {{ .Values.celery_app_name | default "cloudlaunchserver" }} -d celery@$HOSTNAME"]
             timeoutSeconds: 10
           livenessProbe:
             exec:
               command: ["bash",
                         "-c",
-                        "celery inspect ping -A {{ .Values.celery_app_name | default "cloudlaunchserver" }} -d celery@$HOSTNAME"]
+                        "/app/venv/bin/celery inspect ping -A {{ .Values.celery_app_name | default "cloudlaunchserver" }} -d celery@$HOSTNAME"]
           ports:
             - name: http
               containerPort: 8000
