@@ -48,6 +48,9 @@ extra_secret_mounts: []
 #    secret_name: "{{ template "cloudman.fullname" . }}-secret"
 #    read_only: true
 
+extraVolumes: |
+extraVolumeMounts: |
+
 service:
   type: ClusterIP
   port: 8000

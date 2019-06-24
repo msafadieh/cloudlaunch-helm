@@ -62,6 +62,9 @@ spec:
               mountPath: {{ .mount_path }}
               readOnly: {{ .read_only }}
           {{- end }}
+{{- with .Values.extraVolumeMounts }}
+{{ tpl . $ | indent 12 }}
+{{- end }}
       volumes:
         - name: initial-data
           configMap:
@@ -83,6 +86,9 @@ spec:
             secretName: {{ tpl .secret_name $ }}
             defaultMode: 0777
         {{- end }}
+{{- with .Values.extraVolumes }}
+{{ tpl . $ | indent 8 }}
+{{- end }}
       containers:
         - name: {{ .Values.container_name | default .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
