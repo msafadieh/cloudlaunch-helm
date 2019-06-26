@@ -23,6 +23,8 @@ spec:
         release: {{ .Release.Name }}
         component: django
     spec:
+      securityContext:
+        fsGroup: 2000
       initContainers:
         - name: {{ .Values.container_name | default .Chart.Name }}-init
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -120,6 +122,9 @@ spec:
               mountPath: {{ .mount_path }}
               readOnly: {{ .read_only }}
           {{- end }}
+{{- with .Values.extraVolumeMounts }}
+{{ tpl . $ | indent 12 }}
+{{- end }}
           env:
             - name: HELMSMAN_AUTO_DEPLOY
               value: "true"
