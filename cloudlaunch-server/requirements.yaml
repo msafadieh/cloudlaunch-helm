@@ -1,8 +1,0 @@
-dependencies:
-    - name: postgresql
-      repository: https://kubernetes-charts.storage.googleapis.com/
-      version: 3.15.0
-    - name: rabbitmq-ha
-      repository: https://kubernetes-charts.storage.googleapis.com/
-      version: 1.22.2
-      alias: rabbitmq
