@@ -1,0 +1,102 @@
+# Default values for chart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+replicaCount: 1
+image:
+  repository: cloudve/cloudlaunch-server
+  tag: latest
+  pullPolicy: IfNotPresent
+
+# What initial data to import through django loaddata on startup.
+initial_data:
+  - 1_clouds.json: true
+  - 2_appliances.json: true
+
+nameOverride: cloudlaunch
+env_prefix: CLOUDLAUNCH
+celery_app_name: cloudlaunchserver
+container_name: cloudlaunchServer
+
+# Django settings file to use
+django_settings_module: cloudlaunchserver.settings_prod
+django_dir: /app/django-cloudlaunch
+admin_password:
+sentry_dns:
+secret_key:
+fernet_keys: []
+
+# Extra environment variables to pass to container
+extra_env: {}
+
+extra_init_scripts: {}
+# extra_init_scripts:
+#   my_init_script.sh:|
+#      #!/bin/sh
+#      echo "Do something."
+
+extra_config_mounts: []
+#extra_config_mounts:
+#  - name: cloudman_extras
+#    mount_path: /app/extra
+#    config_name: "{{ template "cloudman.fullname" . }}-config"
+#    read_only: true
+
+extra_secret_mounts: []
+#extra_secret_mounts:
+#  - name: cloudman_bootstrap
+#    mount_path: /app/secrets
+#    secret_name: "{{ template "cloudman.fullname" . }}-secret"
+#    read_only: true
+
+extraVolumes: |
+extraVolumeMounts: |
+
+service:
+  type: ClusterIP
+  port: 8000
+
+ingress:
+  enabled: false
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  path: /
+  hosts:
+    - ~
+  protocol: https
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #  cpu: 100m
+  #  memory: 128Mi
+  # requests:
+  #  cpu: 100m
+  #  memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+rabbitmq:
+  rabbitmqUsername: notAGuest
+  rabbitmqPassword: aRandomPassword
+  rabbitmqErlangCookie: mustRemainSameBetweenUpgrades
+  replicaCount: 1
+
+postgresql:
+  enabled: true
+  postgresqlDatabase: cloudlaunch
+  postgresqlUsername: cloudlaunch
+  postgresqlPassword: some_pass
+  persistence:
+    accessMode: ReadWriteMany
