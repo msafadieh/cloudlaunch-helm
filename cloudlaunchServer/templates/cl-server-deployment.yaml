@@ -2,10 +2,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "cloudlaunch-server.fullname" . }}
+  name: {{ template "cloudlaunchServer.fullname" . }}
   labels:
-    app: {{ template "cloudlaunch-server.name" . }}
-    chart: {{ template "cloudlaunch-server.chart" . }}
+    app: {{ template "cloudlaunchServer.name" . }}
+    chart: {{ template "cloudlaunchServer.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
     component: django
@@ -13,13 +13,13 @@ spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ template "cloudlaunch-server.name" . }}
+      app: {{ template "cloudlaunchServer.name" . }}
       release: {{ .Release.Name }}
       component: django
   template:
     metadata:
       labels:
-        app: {{ template "cloudlaunch-server.name" . }}
+        app: {{ template "cloudlaunchServer.name" . }}
         release: {{ .Release.Name }}
         component: django
     spec:
@@ -40,7 +40,7 @@ spec:
 */}}
             - name: CURL_CA_BUNDLE
               value: ""
-          {{- include "cloudlaunch-server.envvars" . }}
+          {{- include "cloudlaunchServer.envvars" . }}
 {{- range $key, $val := .Values.extra_env }}
 {{- if $val }}
             - name: {{ $key | upper }}
@@ -70,11 +70,11 @@ spec:
       volumes:
         - name: initial-data
           configMap:
-            name: {{ template "cloudlaunch-server.fullname" . }}-initial-data
+            name: {{ template "cloudlaunchServer.fullname" . }}-initial-data
             defaultMode: 0777
         - name: scripts
           configMap:
-            name: {{ template "cloudlaunch-server.fullname" . }}-init-scripts
+            name: {{ template "cloudlaunchServer.fullname" . }}-init-scripts
             defaultMode: 0777
         {{- range .Values.extra_config_mounts }}
         - name: {{ .name }}
@@ -128,7 +128,7 @@ spec:
           env:
             - name: HELMSMAN_AUTO_DEPLOY
               value: "true"
-          {{- include "cloudlaunch-server.envvars" . }}
+          {{- include "cloudlaunchServer.envvars" . }}
 {{- range $key, $val := .Values.extra_env }}
 {{- if $val }}
             - name: {{ $key | upper }}

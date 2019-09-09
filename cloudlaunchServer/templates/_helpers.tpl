@@ -2,7 +2,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "cloudlaunch-server.name" -}}
+{{- define "cloudlaunchServer.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
@@ -11,7 +11,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "cloudlaunch-server.fullname" -}}
+{{- define "cloudlaunchServer.fullname" -}}
 {{- if .Values.fullnameOverride -}}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
@@ -27,7 +27,7 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "cloudlaunch-server.chart" -}}
+{{- define "cloudlaunchServer.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
@@ -50,7 +50,7 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{/*
 Return django secret key
 */}}
-{{- define "cloudlaunch-server.secret_key" -}}
+{{- define "cloudlaunchServer.secret_key" -}}
 {{- if .Values.secret_key }}
     {{- .Values.secret_key -}}
 {{- else -}}
@@ -61,7 +61,7 @@ Return django secret key
 {{/*
 Return django fernet keys
 */}}
-{{- define "cloudlaunch-server.fernet_keys" -}}
+{{- define "cloudlaunchServer.fernet_keys" -}}
 {{- if .Values.fernet_keys }}
     {{- join "," .Values.fernet_keys -}}
 {{- else -}}
@@ -69,7 +69,7 @@ Return django fernet keys
 {{- end -}}
 {{- end -}}
 
-{{- define "cloudlaunch-server.envvars" }}
+{{- define "cloudlaunchServer.envvars" }}
             - name: CELERY_BROKER_URL
               value: amqp://{{ .Values.rabbitmq.rabbitmqUsername }}:{{ .Values.rabbitmq.rabbitmqPassword }}@{{ template "rabbitmq.fullname" . }}:5672/
             - name: DJANGO_SETTINGS_MODULE
@@ -95,12 +95,12 @@ Return django fernet keys
             - name: {{ .Values.env_prefix | default "CLOUDLAUNCH" | upper }}_SECRET_KEY
               valueFrom:
                 secretKeyRef:
-                  name: {{ template "cloudlaunch-server.fullname" . }}
+                  name: {{ template "cloudlaunchServer.fullname" . }}
                   key: cloudlaunch-secret-key
             - name: {{ .Values.env_prefix | default "CLOUDLAUNCH" | upper }}_FERNET_KEYS
               valueFrom:
                 secretKeyRef:
-                  name: {{ template "cloudlaunch-server.fullname" . }}
+                  name: {{ template "cloudlaunchServer.fullname" . }}
                   key: cloudlaunch-fernet-keys
 {{- /*
   Trick to globally disable certificate verification as OIDC will fail due to unverified certificate
@@ -116,7 +116,7 @@ Return django fernet keys
 {{/*
 Create a template for expanding a section into env vars
 */}}
-{{- define "cloudlaunch-server.extra_envvars" -}}
+{{- define "cloudlaunchServer.extra_envvars" -}}
 {{- range $key, $val := . }}
 {{- if $val }}
             - name: {{ $key | upper }}

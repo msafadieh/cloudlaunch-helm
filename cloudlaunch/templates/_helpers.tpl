@@ -35,6 +35,6 @@ Create chart name and version as used by the chart label.
 Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 */}}
-{{- define "cloudlaunch-server.fullname" -}}
-{{- printf "%s-%s" .Release.Name "cloudlaunch-server" | trunc 63 | trimSuffix "-" -}}
+{{- define "cloudlaunchServer.fullname" -}}
+{{- printf "%s-%s" .Release.Name "cloudlaunchServer" | trunc 63 | trimSuffix "-" -}}
 {{- end -}}

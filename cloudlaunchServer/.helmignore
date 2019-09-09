@@ -20,4 +20,4 @@
 .idea/
 *.tmproj
 # Ignore charts folder and package archive
-cloudlaunch-server.tar.gz
+cloudlaunchServer.tar.gz

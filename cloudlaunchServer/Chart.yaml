@@ -1,4 +1,4 @@
-name: cloudlaunch-server
+name: cloudlaunchServer
 version: 0.2.0
 description: A Helm chart for the CloudLaunch server/api component
 home: http://cloudlaunch.cloudve.org/
