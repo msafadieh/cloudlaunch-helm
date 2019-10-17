@@ -1,4 +1,4 @@
 dependencies:
     - name: cloudlaunchServer
-      repository: https://raw.githubusercontent.com/CloudVE/helm-charts/master
-      version: 0.2.0
+      repository: https://raw.githubusercontent.com/almahmoud/helm-charts/master
+      version: 0.3.0

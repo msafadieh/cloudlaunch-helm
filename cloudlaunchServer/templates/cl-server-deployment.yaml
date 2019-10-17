@@ -26,7 +26,7 @@ spec:
       securityContext:
         fsGroup: 2000
       initContainers:
-        - name: {{ .Values.container_name | default .Chart.Name }}-init
+        - name: {{ .Values.container_name | default (lower .Chart.Name) }}-init
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: ["/bin/bash", "-c", "/bin/run-parts --exit-on-error --verbose --regex '.*.sh$' /app/scripts"]
@@ -92,7 +92,7 @@ spec:
 {{ tpl . $ | indent 8 }}
 {{- end }}
       containers:
-        - name: {{ .Values.container_name | default .Chart.Name }}
+        - name: {{ .Values.container_name | default (lower .Chart.Name) }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
