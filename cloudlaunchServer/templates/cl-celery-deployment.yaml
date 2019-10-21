@@ -2,10 +2,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "cloudlaunchServer.fullname" . }}-celery
+  name: {{ template "cloudlaunchserver.fullname" . }}-celery
   labels:
-    app: {{ template "cloudlaunchServer.name" . }}
-    chart: {{ template "cloudlaunchServer.chart" . }}
+    app: {{ template "cloudlaunchserver.name" . }}
+    chart: {{ template "cloudlaunchserver.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
     component: celery
@@ -13,13 +13,13 @@ spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ template "cloudlaunchServer.name" . }}
+      app: {{ template "cloudlaunchserver.name" . }}
       release: {{ .Release.Name }}
       component: celery
   template:
     metadata:
       labels:
-        app: {{ template "cloudlaunchServer.name" . }}
+        app: {{ template "cloudlaunchserver.name" . }}
         release: {{ .Release.Name }}
         component: celery
     spec:
@@ -53,7 +53,7 @@ spec:
               containerPort: 8000
               protocol: TCP
           env:
-          {{- include "cloudlaunchServer.envvars" . }}
+          {{- include "cloudlaunchserver.envvars" . }}
 {{- range $key, $val := .Values.extra_env }}
 {{- if $val }}
             - name: {{ $key | upper }}

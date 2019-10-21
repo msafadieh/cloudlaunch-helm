@@ -10,7 +10,7 @@ metadata:
 data:
   default.conf: |-
     upstream cloudlaunch_server {
-      server {{ template "cloudlaunchServer.fullname" . }}:8000;
+      server {{ template "cloudlaunchserver.fullname" . }}:8000;
     }
     
     server {

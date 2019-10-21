@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ template "cloudlaunchServer.fullname" . }}-initial-data
+  name: {{ template "cloudlaunchserver.fullname" . }}-initial-data
   labels:
-    app: {{ template "cloudlaunchServer.name" . }}
-    chart: {{ template "cloudlaunchServer.chart" . }}
+    app: {{ template "cloudlaunchserver.name" . }}
+    chart: {{ template "cloudlaunchserver.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 data:

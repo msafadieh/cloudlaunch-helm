@@ -44,7 +44,7 @@ tolerations: []
 
 affinity: {}
 
-cloudlaunchServer:
+cloudlaunchserver:
     nameOverride: cloudlaunch
     ingress:
         enabled: true
