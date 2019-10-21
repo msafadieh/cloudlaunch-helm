@@ -2,7 +2,7 @@
 {{- $fullName := include "cloudlaunch.fullname" . -}}
 {{- $servicePort := .Values.service.port -}}
 {{- $ingressPath := .Values.ingress.path -}}
-{{- $cloudlaunch_server := include "cloudlaunchServer.fullname" . -}}
+{{- $cloudlaunch_server := include "cloudlaunchserver.fullname" . -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
