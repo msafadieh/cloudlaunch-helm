@@ -34,11 +34,11 @@ Create chart name and version as used by the chart label.
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "cloudlaunchServer.name" -}}
-{{- if .Values.cloudlaunchServer -}}
-{{- default "cloudlaunchServer" .Values.cloudlaunchServer.nameOverride | trunc 63 | trimSuffix "-" | lower -}}
+{{- define "cloudlaunchserver.name" -}}
+{{- if .Values.cloudlaunchserver -}}
+{{- default "cloudlaunchserver" .Values.cloudlaunchserver.nameOverride | trunc 63 | trimSuffix "-" | lower -}}
 {{- else -}}
-{{- printf "cloudlaunchServer" | trunc 63 | trimSuffix "-" | lower -}} 
+{{- printf "cloudlaunchserver" | trunc 63 | trimSuffix "-" | lower -}} 
 {{- end -}}
 {{- end -}}
 
@@ -48,12 +48,12 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 If release name contains chart name it will be used as a full name.
 */}}
 {{- define "cloudlaunchserver.fullname" -}}
-{{- $name := "cloudlaunchServer" -}}
-{{- if .Values.cloudlaunchServer -}}
-{{- if .Values.cloudlaunchServer.fullnameOverride -}}
-{{- .Values.cloudlaunchServer.fullnameOverride | trunc 63 | trimSuffix "-" | lower -}}
+{{- $name := "cloudlaunchserver" -}}
+{{- if .Values.cloudlaunchserver -}}
+{{- if .Values.cloudlaunchserver.fullnameOverride -}}
+{{- .Values.cloudlaunchserver.fullnameOverride | trunc 63 | trimSuffix "-" | lower -}}
 {{- else -}}
-{{- $name := default "cloudlaunchServer" .Values.cloudlaunchServer.nameOverride -}}
+{{- $name := default "cloudlaunchserver" .Values.cloudlaunchserver.nameOverride -}}
 {{- end -}}
 {{- end -}}
 {{- if contains $name .Release.Name -}}
