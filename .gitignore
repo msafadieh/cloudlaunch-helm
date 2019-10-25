@@ -1,4 +1,5 @@
 
 cloudlaunch/charts/
-cloudlaunch-servre/charts/
-requirements.lock
+cloudlaunchserver/charts/
+*/requirements.lock
+*/*.swp
