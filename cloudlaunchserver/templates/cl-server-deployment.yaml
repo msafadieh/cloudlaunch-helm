@@ -67,6 +67,12 @@ spec:
 {{- with .Values.extraVolumeMounts }}
 {{ tpl . $ | indent 12 }}
 {{- end }}
+        {{- if .Values.extraInitContainers -}}
+        {{- range $each := .Values.extraInitContainers -}}
+        {{- print "- " | nindent 8 -}}
+        {{- tpl ($each | toYaml | indent 10 | trim) $ -}}
+        {{- end }}
+        {{- end }}
       volumes:
         - name: initial-data
           configMap:
