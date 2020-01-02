@@ -22,6 +22,10 @@ spec:
         app: {{ template "cloudlaunch.name" . }}
         release: {{ .Release.Name }}
         component: frontend
+      annotations:
+        {{- with .Values.podAnnotations -}}
+        {{ toYaml . | nindent 8 }}
+        {{ end }}
     spec:
       volumes:
         - name: nginx-config

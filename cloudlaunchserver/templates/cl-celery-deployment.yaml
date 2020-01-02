@@ -22,6 +22,10 @@ spec:
         app: {{ template "cloudlaunchserver.name" . }}
         release: {{ .Release.Name }}
         component: celery
+      annotations:
+        {{- with .Values.podAnnotations -}}
+        {{ toYaml . | nindent 8 }}
+        {{ end }}
     spec:
       # Give 30 mins for celery worker to finish
       terminationGracePeriodSeconds: 1800

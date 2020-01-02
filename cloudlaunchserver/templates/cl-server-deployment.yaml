@@ -22,6 +22,10 @@ spec:
         app: {{ template "cloudlaunchserver.name" . }}
         release: {{ .Release.Name }}
         component: django
+      annotations:
+        {{- with .Values.podAnnotations -}}
+        {{ toYaml . | nindent 8 }}
+        {{ end }}
     spec:
       securityContext:
         fsGroup: 2000

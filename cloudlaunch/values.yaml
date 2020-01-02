@@ -49,3 +49,5 @@ cloudlaunchserver:
     ingress:
         enabled: true
         path: /cloudlaunch
+
+podAnnotations: {}
