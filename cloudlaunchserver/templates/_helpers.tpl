@@ -85,7 +85,10 @@ Return django fernet keys
             - name: {{ .Values.env_prefix | default "CLOUDLAUNCH" | upper }}_DB_PORT
               value: {{ .Values.postgresql.service.port | default 5432 | quote }}
             - name: {{ .Values.env_prefix | default "CLOUDLAUNCH" | upper }}_DB_PASSWORD
-              value: {{ .Values.postgresql.postgresqlPassword | quote }}
+              valueFrom:
+                secretKeyRef:
+                  name: "{{ .Release.Name }}-postgresql"
+                  key: postgresql-password
 {{/*            {{- if not (eq .Values.ingress.path "/") }}*/}}
 {{/*            - name: CLOUDLAUNCH_PATH_PREFIX*/}}
 {{/*              value: {{ .Values.ingress.path | quote }}*/}}
