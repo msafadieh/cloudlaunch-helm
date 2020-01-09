@@ -97,7 +97,11 @@ postgresql:
   enabled: true
   postgresqlDatabase: cloudlaunch
   postgresqlUsername: cloudlaunch
-  postgresqlPassword: some_pass
+  # Password will be auto-generated if not specified, then stored in a secret
+  # postgresqlPassword: some_pass
+  # The postgres superuser password will not be set if not specified. If you need a postgres superuser,
+  # this should be set at launch (eg: for access to manually modify databases on the running server)
+  # postgresqlPostgresPassword: admin_pass
   persistence:
     accessMode: ReadWriteMany
 
