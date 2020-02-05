@@ -89,7 +89,8 @@ affinity: {}
 
 rabbitmq:
   rabbitmqUsername: notAGuest
-  rabbitmqPassword: aRandomPassword
+  # Will autogenerate if not set
+  # rabbitmqPassword: aRandomPassword
   rabbitmqErlangCookie: mustRemainSameBetweenUpgrades
   replicaCount: 1
 

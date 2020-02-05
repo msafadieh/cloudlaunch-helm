@@ -70,8 +70,18 @@ Return django fernet keys
 {{- end -}}
 
 {{- define "cloudlaunchserver.envvars" }}
+            - name: RABBITMQ_USER
+              valueFrom:
+                secretKeyRef:
+                  name: "{{ .Release.Name }}-rabbitmq"
+                  key: rabbitmq-username
+            - name: RABBITMQ_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: "{{ .Release.Name }}-rabbitmq"
+                  key: rabbitmq-password
             - name: CELERY_BROKER_URL
-              value: amqp://{{ .Values.rabbitmq.rabbitmqUsername }}:{{ .Values.rabbitmq.rabbitmqPassword }}@{{ template "rabbitmq.fullname" . }}:5672/
+              value: amqp://$(RABBITMQ_USER):$(RABBITMQ_PASS)@{{ template "rabbitmq.fullname" . }}:5672/
             - name: DJANGO_SETTINGS_MODULE
               value: {{ .Values.django_settings_module | default "cloudlaunchserver.settings_prod" | quote }}
             - name: {{ .Values.env_prefix | default "CLOUDLAUNCH" | upper }}_DB_ENGINE
