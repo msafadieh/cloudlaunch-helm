@@ -88,10 +88,9 @@ tolerations: []
 affinity: {}
 
 rabbitmq:
-  rabbitmqUsername: notAGuest
+  rabbitmqUsername: cloudlaunch
   # Will autogenerate if not set
   # rabbitmqPassword: aRandomPassword
-  rabbitmqErlangCookie: mustRemainSameBetweenUpgrades
   replicaCount: 1
 
 postgresql:
