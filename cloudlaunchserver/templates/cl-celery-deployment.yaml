@@ -58,12 +58,7 @@ spec:
               protocol: TCP
           env:
           {{- include "cloudlaunchserver.envvars" . }}
-{{- range $key, $val := .Values.extra_env }}
-{{- if $val }}
-            - name: {{ $key | upper }}
-              value: "{{ tpl $val $ }}"
-{{- end }}
-{{- end }}
+          {{- include "cloudlaunchserver.cleanExtraEnvs" . }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}
