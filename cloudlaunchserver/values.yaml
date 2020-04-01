@@ -114,3 +114,6 @@ postgresql:
     accessMode: ReadWriteMany
 
 podAnnotations: {}
+
+rbac:
+  serviceAccount:
